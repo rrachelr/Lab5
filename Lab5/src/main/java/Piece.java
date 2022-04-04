@@ -43,7 +43,8 @@ public abstract class Piece {
         this.original = original;
     }
 
+    //ignore the commit where i say we have to override these in each class apparently we don't? idk
     public abstract void speak();
 
-    public abstract void canSpawn();
+    public abstract boolean canSpawn();
 }

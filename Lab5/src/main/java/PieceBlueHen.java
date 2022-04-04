@@ -14,13 +14,13 @@ public class PieceBlueHen extends Piece {
         this.numRecruits = numRecruits;
         updateFly();
     }
-
+    //not sure what we do with the empty constructors
     public PieceBlueHen ()  {
         this('H',"NON",
                 0,0,
                 false,true);
     }
-    
+
     public int getNumAttacks()    {
         return this.numAttacks;
     }
@@ -48,6 +48,7 @@ public class PieceBlueHen extends Piece {
             this.flies = false;
         }
     }
+
     public void speak(){
         System.out.println("Go UD!");
     }

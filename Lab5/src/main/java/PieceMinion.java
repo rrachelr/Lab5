@@ -40,8 +40,8 @@ public class PieceMinion extends Piece {
         return true;
     } */
 
-    public PieceMinion spawn(){
-        return new PieceMinion(Character.toLowerCase(this.symbol),
+    public PieceMinion1 spawn(){
+        return new PieceMinion1(Character.toLowerCase(this.symbol),
                 this.teamColor,1,
                 0,
                 false,

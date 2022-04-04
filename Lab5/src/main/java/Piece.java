@@ -26,4 +26,20 @@ public abstract class Piece {
     public boolean isOriginal() {
         return original;
     }
+
+    public void setSymbol(char symbol) {
+        this.symbol = symbol;
+    }
+
+    public void setTeamColor(String teamColor) {
+        this.teamColor = teamColor;
+    }
+
+    public void setHidden(boolean hidden) {
+        this.hidden = hidden;
+    }
+
+    public void setOriginal(boolean original) {
+        this.original = original;
+    }
 }

@@ -47,4 +47,10 @@ public abstract class Piece {
     public abstract void speak();
 
     public abstract boolean canSpawn();
+
+    public boolean validMovePath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
+        // You will implement this method in a later step
+        // each Piece will have a different valid path
+        return true;
+    }
 }

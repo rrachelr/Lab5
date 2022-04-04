@@ -42,4 +42,8 @@ public abstract class Piece {
     public void setOriginal(boolean original) {
         this.original = original;
     }
+
+    public abstract void speak();
+
+    public abstract void canSpawn();
 }

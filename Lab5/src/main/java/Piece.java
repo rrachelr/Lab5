@@ -53,4 +53,9 @@ public abstract class Piece {
         // each Piece will have a different valid path
         return true;
     }
+
+    @Override
+    public String toString() {
+        return this.teamColor + "---" + this.symbol;
+    }
 }

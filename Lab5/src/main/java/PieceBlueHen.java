@@ -53,12 +53,13 @@ public class PieceBlueHen extends Piece {
         System.out.println("Go UD!");
     }
 
-    public boolean validMovePath(int fromSquareRow, int fromSquareCol,
+    /* public boolean validMovePath(int fromSquareRow, int fromSquareCol,
+
                                  int toSquareRow, int toSquareCol) {
         // You will implement this method in a later step
         // each Piece will have a different valid path
         return true;
-    }
+    } */
 
     public PieceBlueHen spawn()    {
         PieceBlueHen copyHen =

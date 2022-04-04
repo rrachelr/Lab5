@@ -10,4 +10,20 @@ public abstract class Piece {
         this.hidden = hidden;
         this.original = original;
     }
+
+    public char getSymbol() {
+        return symbol;
+    }
+
+    public String getTeamColor() {
+        return teamColor;
+    }
+
+    public boolean isHidden() {
+        return hidden;
+    }
+
+    public boolean isOriginal() {
+        return original;
+    }
 }

@@ -54,6 +54,8 @@ public abstract class Piece {
         return true;
     }
 
+    public abstract Piece spawn();
+
     @Override
     public String toString() {
         return this.teamColor + "---" + this.symbol;

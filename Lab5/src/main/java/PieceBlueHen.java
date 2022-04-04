@@ -1,10 +1,6 @@
-public class PieceBlueHen {
-    private char symbol;
-    private String teamColor;
+public class PieceBlueHen extends Piece {
     private int numAttacks;
     private int numRecruits;
-    private boolean hidden ;
-    private boolean original;
     private boolean flies;
 
     final public int MAX_NUM_ATTACKS = 3;
@@ -13,12 +9,9 @@ public class PieceBlueHen {
                           String teamColor,
                           int numAttacks, int numRecruits,
                           boolean hidden, boolean original){
-        this.symbol = symbol;
-        this.teamColor = teamColor;
+        super(symbol, teamColor, hidden, original);
         this.numAttacks = numAttacks;
         this.numRecruits = numRecruits;
-        this.hidden = hidden;
-        this.original = original;
         updateFly();
     }
 

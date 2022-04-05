@@ -42,4 +42,8 @@ public class PieceEvilMinion extends PieceMinion1{
         System.out.println("Roar!");
     }
 
+    public boolean validMovePath() {
+        return true;
+    }
+
 }

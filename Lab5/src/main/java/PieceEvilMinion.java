@@ -24,4 +24,17 @@ public class PieceEvilMinion extends PieceMinion1{
     public boolean canAttack() {
         return hungry;
     }
+
+    public void setNumAttacks(int numAttacks) {
+        this.numAttacks = numAttacks;
+    }
+
+    public void updateHungry() {
+        if (this.numAttacks < MAX_NUM_ATTACKS) {
+            this.hungry = true;
+        } else {
+            this.hungry = false;
+        }
+    }
+
 }

@@ -46,4 +46,11 @@ public class PieceEvilMinion extends PieceMinion1{
         return true;
     }
 
+    public PieceEvilMinion spawn() {
+        PieceEvilMinion babyMinion = new PieceEvilMinion(Character.toLowerCase(this.symbol), this.teamColor, 1, 0 , 0, false, false);
+        babyMinion.hungry = true;
+        babyMinion.setNumTimesSpawned(this.numTimesSpawned + 1);
+        return babyMinion;
+    }
+
 }

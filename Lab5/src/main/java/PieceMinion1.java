@@ -29,6 +29,8 @@ public class PieceMinion1 extends Piece {
        this.numRecruits = numRecruits;
     }
 
+    public void setNumTimesSpawned(int numTimesSpawned) { this.numTimesSpawned = numTimesSpawned; }
+
     public void speak(){
         System.out.println("Bello!");
     }

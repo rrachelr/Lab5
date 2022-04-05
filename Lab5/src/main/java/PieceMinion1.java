@@ -1,10 +1,10 @@
-public class PieceMinion extends Piece {
+public class PieceMinion1 extends Piece {
     private int numRecruits;
     private int numTimesSpawned;
 
     public static int MAX_NUM_SPAWNED = 3;
 
-    public PieceMinion(char symbol, String teamColor,
+    public PieceMinion1(char symbol, String teamColor,
                         int numRecruits, int numTimesSpawned,
                         boolean hidden, boolean original) {
         super(symbol, teamColor, hidden, original);
@@ -12,7 +12,7 @@ public class PieceMinion extends Piece {
         this.numTimesSpawned = numTimesSpawned;
     }
 
-    public PieceMinion(){
+    public PieceMinion1(){
         this('M',"- -",
                 0,0,
                 false,true);
@@ -33,12 +33,12 @@ public class PieceMinion extends Piece {
         System.out.println("Bello!");
     }
 
-   /* public boolean validMovePath(int fromSquareRow, int fromSquareCol,
+    public boolean validMovePath(int fromSquareRow, int fromSquareCol,
                                  int toSquareRow, int toSquareCol) {
         // You will implement this method in a later step
         // each Piece will have a different valid path
         return true;
-    } */
+    }
 
     public PieceMinion1 spawn(){
         return new PieceMinion1(Character.toLowerCase(this.symbol),

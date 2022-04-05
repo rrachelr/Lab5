@@ -1,9 +1,9 @@
-public class PieceBuzz extends Piece {
+public class PieceBuzz1 extends Piece {
     private int numAttacks;
     private int numTimesBeenAttacked;
     private boolean workingLaser;
 
-    public PieceBuzz(char symbol,
+    public PieceBuzz1(char symbol,
                       String teamColor,
                       int numAttacks,
                       int numTimesBeenAttacked,
@@ -16,7 +16,7 @@ public class PieceBuzz extends Piece {
         this.workingLaser = workingLaser;
     }
 
-    public PieceBuzz(){
+    public PieceBuzz1(){
         this('B',"- -",
                 0,0,
                 true, false, true);
@@ -49,12 +49,12 @@ public class PieceBuzz extends Piece {
         System.out.println("To Infinity and Beyond!");
     }
 
-    /* public boolean validMovePath(int fromSquareRow, int fromSquareCol,
+    public boolean validMovePath(int fromSquareRow, int fromSquareCol,
                                  int toSquareRow, int toSquareCol) {
         // You will implement this method in a later step
         // each Piece will have a different valid path
         return true;
-    } */
+    }
 
     public Piece spawn(){
         return null;

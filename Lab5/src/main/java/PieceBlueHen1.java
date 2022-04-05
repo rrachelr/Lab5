@@ -1,11 +1,11 @@
-public class PieceBlueHen extends Piece {
+public class PieceBlueHen1 extends Piece {
     private int numAttacks;
     private int numRecruits;
     private boolean flies;
 
     final public int MAX_NUM_ATTACKS = 3;
 
-    public PieceBlueHen (char symbol,
+    public PieceBlueHen1 (char symbol,
                           String teamColor,
                           int numAttacks, int numRecruits,
                           boolean hidden, boolean original){
@@ -14,8 +14,8 @@ public class PieceBlueHen extends Piece {
         this.numRecruits = numRecruits;
         updateFly();
     }
-    //not sure what we do with the empty constructors
-    public PieceBlueHen ()  {
+
+    public PieceBlueHen1 ()  {
         this('H',"NON",
                 0,0,
                 false,true);
@@ -53,17 +53,17 @@ public class PieceBlueHen extends Piece {
         System.out.println("Go UD!");
     }
 
-    /* public boolean validMovePath(int fromSquareRow, int fromSquareCol,
+     public boolean validMovePath(int fromSquareRow, int fromSquareCol,
 
                                  int toSquareRow, int toSquareCol) {
         // You will implement this method in a later step
         // each Piece will have a different valid path
         return true;
-    } */
+    }
 
-    public PieceBlueHen spawn()    {
-        PieceBlueHen copyHen =
-                new PieceBlueHen(Character.toLowerCase(this.symbol),
+    public PieceBlueHen1 spawn()    {
+        PieceBlueHen1 copyHen =
+                new PieceBlueHen1(Character.toLowerCase(this.symbol),
                         this.teamColor,this.numAttacks,this.numRecruits,
                         false,false);
         return copyHen;

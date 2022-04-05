@@ -12,4 +12,13 @@ public class PieceEvilMinion extends PieceMinion1{
     public PieceEvilMinion () {
         this('E', "NON", 0, 0, 0, false, true);
     }
+
+    public int getNumAttacks() {
+        return this.numAttacks;
+    }
+
+    public boolean isHungry() {
+        return this.hungry;
+    }
+    
 }

@@ -1,6 +1,6 @@
 public class PieceMinion1 extends Piece {
-    private int numRecruits;
-    private int numTimesSpawned;
+    protected int numRecruits;
+    protected int numTimesSpawned;
 
     public static int MAX_NUM_SPAWNED = 3;
 

@@ -1,13 +1,10 @@
-<<<<<<< HEAD
 Piece.java
  Piece
-PieceBlueHen1.java
- PieceBlueHen1
-PieceMinion1.java
- PieceMinion1
-PieceBuzz1.java
- PieceBuzz1
-PieceEvilMinion1.java
- PieceEvilMinion1
-=======
->>>>>>> parent of 8401b60 (Major changes - refactoring)
+PieceBuzz.java
+ PieceBuzz
+PieceBlueHen.java
+ PieceBlueHen
+PieceEvilMinion.java
+ PieceEvilMinion
+PieceMinion.java
+ PieceMinion

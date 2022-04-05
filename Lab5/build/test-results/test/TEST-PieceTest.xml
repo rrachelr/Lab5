@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="PieceTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-04-05T17:40:30" hostname="wifi-roaming-128-4-96-165.wifi.udel.edu" time="0.021">
+<testsuite name="PieceTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-04-05T18:06:41" hostname="wifi-roaming-128-4-142-172.wifi.udel.edu" time="0.023">
   <properties/>
-  <testcase name="test_Minion()" classname="PieceTest" time="0.012"/>
+  <testcase name="test_Minion()" classname="PieceTest" time="0.014"/>
   <testcase name="test_Buzz()" classname="PieceTest" time="0.002"/>
-  <testcase name="test_BlueHen()" classname="PieceTest" time="0.001"/>
-  <testcase name="test_EvilMinion()" classname="PieceTest" time="0.001"/>
-  <testcase name="test_Piece()" classname="PieceTest" time="0.001"/>
+  <testcase name="test_BlueHen()" classname="PieceTest" time="0.002"/>
+  <testcase name="test_EvilMinion()" classname="PieceTest" time="0.002"/>
+  <testcase name="test_Piece()" classname="PieceTest" time="0.002"/>
   <system-out><![CDATA[Testing Minion Piece
 Testing Buzz Lightyear Class
 Testing Blue Hen Class

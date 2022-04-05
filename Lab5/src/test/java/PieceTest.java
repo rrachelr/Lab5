@@ -186,6 +186,5 @@ class PieceTest {
             fail(e.getMessage());
         }
     }
-    */
 
 }

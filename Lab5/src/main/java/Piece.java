@@ -42,15 +42,12 @@ public abstract class Piece {
     public void setOriginal(boolean original) {
         this.original = original;
     }
-
-    //ignore the commit where i say we have to override these in each class apparently we don't? idk
+    
     public abstract void speak();
 
     public abstract boolean canSpawn();
 
-    public abstract boolean validMovePath(int fromSquareRow, int fromSquareCol,
-
-                                          int toSquareRow, int toSquareCol);
+    public abstract boolean validMovePath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol);
 
     public abstract Piece spawn();
 

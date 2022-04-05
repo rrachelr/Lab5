@@ -1,4 +1,4 @@
-public class PieceEvilMinion extends PieceMinion1{
+public class PieceEvilMinion extends PieceMinion{
     private int numAttacks;
     private boolean hungry;
 
@@ -15,11 +15,11 @@ public class PieceEvilMinion extends PieceMinion1{
     }
 
     public int getNumAttacks() {
-        return this.numAttacks;
+        return numAttacks;
     }
 
     public boolean isHungry() {
-        return this.hungry;
+        return hungry;
     }
 
     public boolean canAttack() {

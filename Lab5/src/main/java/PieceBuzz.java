@@ -1,9 +1,9 @@
-public class PieceBuzz1 extends Piece {
+public class PieceBuzz extends Piece {
     private int numAttacks;
     private int numTimesBeenAttacked;
     private boolean workingLaser;
 
-    public PieceBuzz1(char symbol,
+    public PieceBuzz(char symbol,
                       String teamColor,
                       int numAttacks,
                       int numTimesBeenAttacked,
@@ -16,7 +16,7 @@ public class PieceBuzz1 extends Piece {
         this.workingLaser = workingLaser;
     }
 
-    public PieceBuzz1(){
+    public PieceBuzz(){
         this('B',"- -",
                 0,0,
                 true, false, true);

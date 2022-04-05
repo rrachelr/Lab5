@@ -1,11 +1,11 @@
-public class PieceBlueHen1 extends Piece {
+public class PieceBlueHen extends Piece {
     private int numAttacks;
     private int numRecruits;
     private boolean flies;
 
     final public int MAX_NUM_ATTACKS = 3;
 
-    public PieceBlueHen1 (char symbol,
+    public PieceBlueHen (char symbol,
                           String teamColor,
                           int numAttacks, int numRecruits,
                           boolean hidden, boolean original){
@@ -15,7 +15,7 @@ public class PieceBlueHen1 extends Piece {
         updateFly();
     }
 
-    public PieceBlueHen1 ()  {
+    public PieceBlueHen ()  {
         this('H',"NON",
                 0,0,
                 false,true);
@@ -53,7 +53,7 @@ public class PieceBlueHen1 extends Piece {
         System.out.println("Go UD!");
     }
 
-     public boolean validMovePath(int fromSquareRow, int fromSquareCol,
+    public boolean validMovePath(int fromSquareRow, int fromSquareCol,
 
                                  int toSquareRow, int toSquareCol) {
         // You will implement this method in a later step
@@ -61,9 +61,9 @@ public class PieceBlueHen1 extends Piece {
         return true;
     }
 
-    public PieceBlueHen1 spawn()    {
-        PieceBlueHen1 copyHen =
-                new PieceBlueHen1(Character.toLowerCase(this.symbol),
+    public PieceBlueHen spawn()    {
+        PieceBlueHen copyHen =
+                new PieceBlueHen(Character.toLowerCase(this.symbol),
                         this.teamColor,this.numAttacks,this.numRecruits,
                         false,false);
         return copyHen;

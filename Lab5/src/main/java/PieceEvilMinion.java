@@ -7,6 +7,7 @@ public class PieceEvilMinion extends PieceMinion1{
     public PieceEvilMinion (char symbol, String teamColor, int numRecruits, int numAttacks, int numTimesSpawned, boolean hidden, boolean original) {
         super(symbol, teamColor, numRecruits, numTimesSpawned, hidden, original);
         this.numAttacks = numAttacks;
+        updateHungry();
     }
 
     public PieceEvilMinion () {
@@ -35,6 +36,10 @@ public class PieceEvilMinion extends PieceMinion1{
         } else {
             this.hungry = false;
         }
+    }
+
+    public void speak() {
+        System.out.println("Roar!");
     }
 
 }

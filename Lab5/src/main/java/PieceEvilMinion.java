@@ -20,5 +20,8 @@ public class PieceEvilMinion extends PieceMinion1{
     public boolean isHungry() {
         return this.hungry;
     }
-    
+
+    public boolean canAttack() {
+        return hungry;
+    }
 }

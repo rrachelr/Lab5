@@ -6,3 +6,5 @@ PieceMinion1.java
  PieceMinion1
 PieceBuzz1.java
  PieceBuzz1
+PieceEvilMinion1.java
+ PieceEvilMinion1

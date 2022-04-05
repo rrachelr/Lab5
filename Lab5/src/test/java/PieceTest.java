@@ -40,7 +40,7 @@ class PieceTest {
     @Test
     public void test_Minion() {
         System.out.println("Testing Minion Piece");
-        PieceMinion1 stuart = new PieceMinion1('M',
+        PieceMinion stuart = new PieceMinion('M',
                 "Blu",0,0,
                 true,true);
         // check inheritance
@@ -48,18 +48,18 @@ class PieceTest {
 
         try {
             // speak should be implemented
-            Method m = PieceMinion1.class.getMethod("speak", new Class[]{});
+            Method m = PieceMinion.class.getMethod("speak", new Class[]{});
             assertEquals(void.class, m.getReturnType());
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 
             // validPath should be implemented
-            m = PieceMinion1.class.getDeclaredMethod("validMovePath", int.class,int.class,int.class,int.class);
+            m = PieceMinion.class.getDeclaredMethod("validMovePath", int.class,int.class,int.class,int.class);
             assertEquals(boolean.class, m.getReturnType());
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 
             // spawn should be implemented
-            m = PieceMinion1.class.getDeclaredMethod("spawn", new Class[]{});
-            assertEquals(PieceMinion1.class, m.getReturnType());
+            m = PieceMinion.class.getDeclaredMethod("spawn", new Class[]{});
+            assertEquals(PieceMinion.class, m.getReturnType());
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 
         } catch (Exception e) {
@@ -72,7 +72,7 @@ class PieceTest {
     @Test
     public void test_Buzz() {
         System.out.println("Testing Buzz Lightyear Class");
-        PieceBuzz1 buzz = new PieceBuzz1('B',"GRN",
+        PieceBuzz buzz = new PieceBuzz('B',"GRN",
                 0,0,true,
                 false, true);
         // check inheritance
@@ -80,22 +80,22 @@ class PieceTest {
 
         try {
             // speak should be implemented
-            Method m = PieceBuzz1.class.getMethod("speak", new Class[]{});
+            Method m = PieceBuzz.class.getMethod("speak", new Class[]{});
             assertEquals(void.class, m.getReturnType());
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 
             // validPath should be implemented
-            m = PieceBuzz1.class.getDeclaredMethod("validMovePath", int.class,int.class,int.class,int.class);
+            m = PieceBuzz.class.getDeclaredMethod("validMovePath", int.class,int.class,int.class,int.class);
             assertEquals(boolean.class, m.getReturnType());
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 
             // getNumAttacks should be implemented
-            m = PieceBuzz1.class.getDeclaredMethod("getNumAttacks", new Class[]{});
+            m = PieceBuzz.class.getDeclaredMethod("getNumAttacks", new Class[]{});
             assertEquals(int.class, m.getReturnType());
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 
             // setNumAttacks should be implemented
-            m = PieceBuzz1.class.getDeclaredMethod("setNumAttacks", int.class);
+            m = PieceBuzz.class.getDeclaredMethod("setNumAttacks", int.class);
             assertEquals(void.class, m.getReturnType());
             assertFalse(Modifier.isAbstract(m.getModifiers()));
         } catch (Exception e) {
@@ -108,42 +108,42 @@ class PieceTest {
     @Test
     public void test_BlueHen() {
         System.out.println("Testing Blue Hen Class");
-        PieceBlueHen1 youdee = new PieceBlueHen1('H', "Red", 5, 2,true, true);
+        PieceBlueHen youdee = new PieceBlueHen('H', "Red", 5, 2,true, true);
         assertTrue(youdee instanceof Piece);
 
         try {
             // speak should be implemented
-            Method m = PieceBlueHen1.class.getMethod("speak", new Class[]{});
+            Method m = PieceBlueHen.class.getMethod("speak", new Class[]{});
             assertEquals(void.class, m.getReturnType());
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 
             // validPath should be implemented
-            m = PieceBlueHen1.class.getDeclaredMethod("validMovePath", int.class,int.class,int.class,int.class);
+            m = PieceBlueHen.class.getDeclaredMethod("validMovePath", int.class,int.class,int.class,int.class);
             assertEquals(boolean.class, m.getReturnType());
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 
             // spawn should be implemented
-            m = PieceBlueHen1.class.getDeclaredMethod("spawn", new Class[]{});
-            assertEquals(PieceBlueHen1.class, m.getReturnType());
+            m = PieceBlueHen.class.getDeclaredMethod("spawn", new Class[]{});
+            assertEquals(PieceBlueHen.class, m.getReturnType());
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 
             // getNumAttacked should be implemented
-            m = PieceBlueHen1.class.getDeclaredMethod("getNumAttacks", new Class[]{});
+            m = PieceBlueHen.class.getDeclaredMethod("getNumAttacks", new Class[]{});
             assertEquals(int.class, m.getReturnType());
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 
             // getNumRecruits should be implemented
-            m = PieceBlueHen1.class.getDeclaredMethod("getNumRecruits", new Class[]{});
+            m = PieceBlueHen.class.getDeclaredMethod("getNumRecruits", new Class[]{});
             assertEquals(int.class, m.getReturnType());
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 
             // setNumAttacks should be implemented
-            m = PieceBlueHen1.class.getDeclaredMethod("setNumAttacks", int.class);
+            m = PieceBlueHen.class.getDeclaredMethod("setNumAttacks", int.class);
             assertEquals(void.class, m.getReturnType());
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 
             // setNumRecruits should be implemented
-            m = PieceBlueHen1.class.getDeclaredMethod("setNumRecruits", int.class);
+            m = PieceBlueHen.class.getDeclaredMethod("setNumRecruits", int.class);
             assertEquals(void.class, m.getReturnType());
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 
@@ -153,15 +153,15 @@ class PieceTest {
             fail(e.getMessage());
         }
     }
-/*
+
     @Test
     public void test_EvilMinion() {
         System.out.println("Testing Evil Minion Piece");
-        PieceEvilMinion1 bob = new PieceEvilMinion1('E',
+        PieceEvilMinion bob = new PieceEvilMinion('E',
                 "Blu",4,2,3,
                 true,false);
         // check inheritance
-        assertTrue(bob instanceof PieceMinion1);
+        assertTrue(bob instanceof PieceMinion);
 
         assertEquals(4,bob.getNumRecruits());
         assertEquals(2,bob.getNumAttacks());
@@ -171,12 +171,12 @@ class PieceTest {
 
         try {
             // speak should be implemented
-            Method m = PieceEvilMinion1.class.getMethod("speak", new Class[]{});
+            Method m = PieceEvilMinion.class.getMethod("speak", new Class[]{});
             assertEquals(void.class, m.getReturnType());
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 
             // validPath should be implemented
-            m = PieceMinion1.class.getDeclaredMethod("validMovePath", int.class,int.class,int.class,int.class);
+            m = PieceMinion.class.getDeclaredMethod("validMovePath", int.class,int.class,int.class,int.class);
             assertEquals(boolean.class, m.getReturnType());
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 

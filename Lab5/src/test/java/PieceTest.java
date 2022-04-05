@@ -153,7 +153,7 @@ class PieceTest {
             fail(e.getMessage());
         }
     }
-
+/*
     @Test
     public void test_EvilMinion() {
         System.out.println("Testing Evil Minion Piece");
@@ -186,6 +186,6 @@ class PieceTest {
             fail(e.getMessage());
         }
     }
-
+    */
 
 }

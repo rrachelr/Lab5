@@ -1,7 +1,7 @@
-Piece.java
- Piece
 PieceBuzz.java
  PieceBuzz
+Piece.java
+ Piece
 PieceBlueHen.java
  PieceBlueHen
 PieceEvilMinion.java

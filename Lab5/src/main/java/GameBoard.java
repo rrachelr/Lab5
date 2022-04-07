@@ -8,5 +8,17 @@ public class GameBoard {
         this.numColumns = numColumns;
         squares = new BoardSquare[numRows][numColumns];
     }
+
+    public int getNumRows() {
+        return numRows;
+    }
+
+    public int getNumColumns() {
+        return numColumns;
+    }
+
+    public BoardSquare[][] getSquares() {
+        return squares;
+    }
 }
 

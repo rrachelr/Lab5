@@ -53,6 +53,6 @@ public abstract class Piece {
 
     @Override
     public String toString() {
-        return this.teamColor + "---" + this.symbol;
+        return this.teamColor + " " + this.symbol;
     }
 }

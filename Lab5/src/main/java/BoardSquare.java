@@ -28,12 +28,10 @@ public class BoardSquare {
 
     public Piece removePiece() {
         //Implement
-        if (!this.emptySpace) {
+        for (this.emptySpace = true; this.piece != null; this.piece = null) {
             return this.piece;
         }
-        else {
-            return null;
-        }
+        return null;
     }
 
     @Override

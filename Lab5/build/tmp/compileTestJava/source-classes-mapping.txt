@@ -1,2 +1,4 @@
 PieceTest.java
  PieceTest
+BoardSquareTest.java
+ BoardSquareTest

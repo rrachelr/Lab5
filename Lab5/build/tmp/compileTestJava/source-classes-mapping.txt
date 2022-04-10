@@ -1,2 +1,6 @@
 PieceTest.java
  PieceTest
+GameBoardTest.java
+ GameBoardTest
+BoardSquareTest.java
+ BoardSquareTest

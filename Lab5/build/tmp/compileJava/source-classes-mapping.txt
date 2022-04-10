@@ -1,10 +1,14 @@
+PieceMinion.java
+ PieceMinion
 PieceBuzz.java
  PieceBuzz
+PieceEvilMinion.java
+ PieceEvilMinion
 Piece.java
  Piece
 PieceBlueHen.java
  PieceBlueHen
-PieceEvilMinion.java
- PieceEvilMinion
-PieceMinion.java
- PieceMinion
+BoardSquare.java
+ BoardSquare
+GameBoard.java
+ GameBoard

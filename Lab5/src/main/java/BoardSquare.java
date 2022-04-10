@@ -27,13 +27,11 @@ public class BoardSquare {
     }
 
     public Piece removePiece() {
-        //Implement
-        if (!this.emptySpace) {
-            return this.piece;
-        }
-        else {
-            return null;
-        }
+        Piece tempPiece = this.piece;
+        this.piece=null;
+        this.emptySpace=true;
+        this.boardSquareColor="";
+        return tempPiece;
     }
 
     @Override

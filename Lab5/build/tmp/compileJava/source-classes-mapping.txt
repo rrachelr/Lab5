@@ -12,3 +12,5 @@ BoardSquare.java
  BoardSquare
 GameBoard.java
  GameBoard
+Team.java
+ Team

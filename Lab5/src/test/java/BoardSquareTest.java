@@ -1,9 +1,22 @@
+/**
+ * <h1>Lab05</h1>
+ * <h2>CISC181-042L/040L Spring 2022</h2>
+ * <h3>University of Delaware</h3>
+ * This program tests the BoardSquare class and its methods.
+ *
+ * @author Sean Johnson/Rachel Robins
+ * @since 2022-04-06
+ * @version 1
+ */
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BoardSquareTest {
     @Test
     public void testingBoardSpace()  {
+        /*
+        Tests the methods in the BoardSquare class
+         */
         System.out.println("Testing Board Square Class");
 
         BoardSquare testSquare11 = new BoardSquare("Black");

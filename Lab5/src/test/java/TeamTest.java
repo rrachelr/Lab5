@@ -1,3 +1,13 @@
+/**
+ * <h1>Lab05</h1>
+ * <h2>CISC181-042L/040L Spring 2022</h2>
+ * <h3>University of Delaware</h3>
+ * This program tests the Team class and its methods.
+ *
+ * @author Sean Johnson/Rachel Robins
+ * @since 2022-04-10
+ * @version 1
+ */
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -6,7 +16,9 @@ import java.util.ArrayList;
 public class TeamTest {
     @Test
     public void getTeamName() {
-
+        /*
+        Tests the methods in the Team class
+         */
         System.out.println("Testing Team class");
 
         Piece blueKevin = new PieceMinion('M',"Blu",

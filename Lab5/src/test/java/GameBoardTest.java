@@ -1,9 +1,22 @@
+/**
+ * <h1>Lab05</h1>
+ * <h2>CISC181-042L/040L Spring 2022</h2>
+ * <h3>University of Delaware</h3>
+ * This program tests the GameBoard class and its methods.
+ *
+ * @author Sean Johnson/Rachel Robins
+ * @since 2022-04-06
+ * @version 1
+ */
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class GameBoardTest {
 
     public static String boardString(int numRows, int numColumns){
+        /*
+        A method created to help test the students' GameBoard class
+         */
         StringBuilder boardString = new StringBuilder();
         boardString.append("Col :       ");
 
@@ -23,6 +36,9 @@ public class GameBoardTest {
 
     @Test
     public void testingBoard()  {
+        /*
+        Tests the methods in the GameBoard class
+         */
         System.out.println("Testing Board Class");
 
         int numRows = 6;

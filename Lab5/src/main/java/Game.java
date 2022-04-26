@@ -12,11 +12,11 @@
  */
 import java.util.Collections;
 
-public class Game {
-    private GameBoard board;
-    private Team team1;
-    private Team team2;
-    private String turn;
+public abstract class Game {
+    protected GameBoard board;
+    protected Team team1;
+    protected Team team2;
+    protected String turn;
 
     /**
      * This method creates a GameBoard and places pieces from each team on
@@ -103,6 +103,10 @@ public class Game {
             this.turn = team1.getTeamColor();
         }
     }
+
+    public abstract boolean isAWinner();
+    public abstract Team getWinner();
+    public abstract boolean isGameEnded();
 
     public String toString(){
         StringBuilder retString = new StringBuilder();

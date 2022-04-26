@@ -45,7 +45,22 @@ public class GameTest {
         // Create a team object
         Team teamB = new Team("Red",piecesTeamB);
 
-        Game ourGame = new Game(8, 8,teamA, teamB);
+        Game ourGame = new Game(8, 8, teamA, teamB) {
+            @Override
+            public boolean isAWinner() {
+                return true;
+            }
+
+            @Override
+            public Team getWinner() {
+                return null;
+            }
+
+            @Override
+            public boolean isGameEnded() {
+                return true;
+            }
+        };
         System.out.println(ourGame.toString());
 
         assertEquals(teamA,ourGame.getCurrentTeam());

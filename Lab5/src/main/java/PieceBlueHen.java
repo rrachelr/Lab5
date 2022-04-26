@@ -1,4 +1,4 @@
-public class PieceBlueHen extends Piece {
+public class PieceBlueHen extends Piece implements Attacker, Recruiter {
     private int numAttacks;
     private int numRecruits;
     private boolean flies;
@@ -36,8 +36,19 @@ public class PieceBlueHen extends Piece {
         this.numAttacks = numAttacks;
         updateFly();
     }
+
+    @Override
+    public boolean validAttackPath(int rowBoard, int colBoard, int rowPiece, int colPiece) {
+        return true;
+    }
+
     public void setNumRecruits(int numRecruits)    {
         this.numRecruits = numRecruits;
+    }
+
+    @Override
+    public boolean validRecruitPath(int rowBoard, int colBoard, int rowPiece, int colPiece) {
+        return true;
     }
 
     private void updateFly()    {

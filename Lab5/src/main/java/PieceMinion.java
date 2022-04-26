@@ -1,4 +1,4 @@
-public class PieceMinion extends Piece {
+public class PieceMinion extends Piece implements Recruiter{
     protected int numRecruits;
     protected int numTimesSpawned;
 
@@ -27,6 +27,11 @@ public class PieceMinion extends Piece {
 
     public void setNumRecruits(int numRecruits) {
        this.numRecruits = numRecruits;
+    }
+
+    @Override
+    public boolean validRecruitPath(int rowBoard, int colBoard, int rowPiece, int colPiece) {
+        return true;
     }
 
     public void setNumTimesSpawned(int numTimesSpawned) { this.numTimesSpawned = numTimesSpawned; }

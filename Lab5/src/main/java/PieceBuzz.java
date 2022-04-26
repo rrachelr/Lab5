@@ -1,4 +1,4 @@
-public class PieceBuzz extends Piece {
+public class PieceBuzz extends Piece implements Attacker {
     private int numAttacks;
     private int numTimesBeenAttacked;
     private boolean workingLaser;
@@ -38,6 +38,11 @@ public class PieceBuzz extends Piece {
 
     public void setNumAttacks(int numAttacks)  {
      this.numAttacks = numAttacks;
+    }
+
+    @Override
+    public boolean validAttackPath(int rowBoard, int colBoard, int rowPiece, int colPiece) {
+        return true;
     }
 
     public void updateNumTimesBeenAttacked(){

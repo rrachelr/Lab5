@@ -8,7 +8,8 @@
  * @author Sean Johnson/Rachel Robins
  * @since 2022-04-10
  * @version 1
- */public class PieceEvilMinion extends PieceMinion{
+ */
+public class PieceEvilMinion extends PieceMinion implements Recruiter, Attacker{
     private int numAttacks;
     private boolean hungry;
 
@@ -55,6 +56,11 @@
         this.numAttacks = numAttacks;
     }
 
+    @Override
+    public boolean validAttackPath(int rowBoard, int colBoard, int rowPiece, int colPiece) {
+        return true;
+    }
+
     /**
      * This method updates hungry to true if numAttacks is less than the max number
      * of attacks. Otherwise, it updates to false.
@@ -95,4 +101,8 @@
         return babyMinion;
     }
 
+    @Override
+    public boolean validRecruitPath(int rowBoard, int colBoard, int rowPiece, int colPiece) {
+        return true;
+    }
 }

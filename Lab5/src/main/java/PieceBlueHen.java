@@ -52,12 +52,7 @@ public class PieceBlueHen extends Piece implements Attacker, Recruiter {
     }
 
     private void updateFly()    {
-        if (this.numAttacks < MAX_NUM_ATTACKS){
-            this.flies = true;
-        }
-        else {
-            this.flies = false;
-        }
+        this.flies = this.numAttacks < MAX_NUM_ATTACKS;
     }
 
     public void speak(){

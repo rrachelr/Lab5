@@ -82,11 +82,7 @@ public abstract class Game {
      * @return
      */
     public boolean isTurn(Team team) {
-        if (this.turn == team.getTeamColor()) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.turn == team.getTeamColor();
     }
 
     public BoardSquare[][] getBoardSquare() {

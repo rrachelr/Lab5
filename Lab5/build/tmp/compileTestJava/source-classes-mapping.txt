@@ -8,3 +8,4 @@ TeamTest.java
  TeamTest
 GameTest.java
  GameTest
+ GameTest$1

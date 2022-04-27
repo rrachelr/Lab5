@@ -22,7 +22,7 @@ class PieceTest {
         System.out.println("Testing Piece Constructor passes");
 
         // speak should not be implemented in the Piece class
-        Method m = clazz.getDeclaredMethod("speak", new Class[]{});
+        Method m = clazz.getDeclaredMethod("speak");
         assertEquals(void.class, m.getReturnType());
         assertTrue(Modifier.isAbstract(m.getModifiers()));
 
@@ -48,7 +48,7 @@ class PieceTest {
 
         try {
             // speak should be implemented
-            Method m = PieceMinion.class.getMethod("speak", new Class[]{});
+            Method m = PieceMinion.class.getMethod("speak");
             assertEquals(void.class, m.getReturnType());
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 
@@ -58,7 +58,7 @@ class PieceTest {
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 
             // spawn should be implemented
-            m = PieceMinion.class.getDeclaredMethod("spawn", new Class[]{});
+            m = PieceMinion.class.getDeclaredMethod("spawn");
             assertEquals(PieceMinion.class, m.getReturnType());
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 
@@ -80,7 +80,7 @@ class PieceTest {
 
         try {
             // speak should be implemented
-            Method m = PieceBuzz.class.getMethod("speak", new Class[]{});
+            Method m = PieceBuzz.class.getMethod("speak");
             assertEquals(void.class, m.getReturnType());
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 
@@ -90,7 +90,7 @@ class PieceTest {
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 
             // getNumAttacks should be implemented
-            m = PieceBuzz.class.getDeclaredMethod("getNumAttacks", new Class[]{});
+            m = PieceBuzz.class.getDeclaredMethod("getNumAttacks");
             assertEquals(int.class, m.getReturnType());
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 
@@ -113,7 +113,7 @@ class PieceTest {
 
         try {
             // speak should be implemented
-            Method m = PieceBlueHen.class.getMethod("speak", new Class[]{});
+            Method m = PieceBlueHen.class.getMethod("speak");
             assertEquals(void.class, m.getReturnType());
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 
@@ -123,17 +123,17 @@ class PieceTest {
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 
             // spawn should be implemented
-            m = PieceBlueHen.class.getDeclaredMethod("spawn", new Class[]{});
+            m = PieceBlueHen.class.getDeclaredMethod("spawn");
             assertEquals(PieceBlueHen.class, m.getReturnType());
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 
             // getNumAttacked should be implemented
-            m = PieceBlueHen.class.getDeclaredMethod("getNumAttacks", new Class[]{});
+            m = PieceBlueHen.class.getDeclaredMethod("getNumAttacks");
             assertEquals(int.class, m.getReturnType());
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 
             // getNumRecruits should be implemented
-            m = PieceBlueHen.class.getDeclaredMethod("getNumRecruits", new Class[]{});
+            m = PieceBlueHen.class.getDeclaredMethod("getNumRecruits");
             assertEquals(int.class, m.getReturnType());
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 
@@ -171,7 +171,7 @@ class PieceTest {
 
         try {
             // speak should be implemented
-            Method m = PieceEvilMinion.class.getMethod("speak", new Class[]{});
+            Method m = PieceEvilMinion.class.getMethod("speak");
             assertEquals(void.class, m.getReturnType());
             assertFalse(Modifier.isAbstract(m.getModifiers()));
 

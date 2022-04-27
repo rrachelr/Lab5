@@ -66,11 +66,7 @@ public class PieceEvilMinion extends PieceMinion implements Recruiter, Attacker{
      * of attacks. Otherwise, it updates to false.
      */
     public void updateHungry() {
-        if (this.numAttacks < MAX_NUM_ATTACKS) {
-            this.hungry = true;
-        } else {
-            this.hungry = false;
-        }
+        this.hungry = this.numAttacks < MAX_NUM_ATTACKS;
     }
 
     /**

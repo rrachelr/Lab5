@@ -17,8 +17,8 @@ public class Team {
     /*
     fields for the class
      */
-    private String teamColor;
-    private ArrayList<Piece> teamPieces;
+    private final String teamColor;
+    private final ArrayList<Piece> teamPieces;
 
     public Team(String teamColor, ArrayList<Piece> piecesList) {
         /*

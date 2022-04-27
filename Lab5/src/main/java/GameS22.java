@@ -6,11 +6,7 @@ public class GameS22 extends Game {
 
     @Override
     public boolean isAWinner() {
-        if (getWinner() != null) {
-            return true;
-        } else {
-            return false;
-        }
+        return getWinner() != null;
     }
 
     @Override
@@ -26,10 +22,6 @@ public class GameS22 extends Game {
 
     @Override
     public boolean isGameEnded() {
-        if (isAWinner()) {
-            return true;
-        } else {
-            return false;
-        }
+        return isAWinner();
     }
 }

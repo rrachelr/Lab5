@@ -15,9 +15,9 @@ public class GameBoard {
     /*
     fields for the class
      */
-    private int numRows;
-    private int numColumns;
-    private BoardSquare[][] squares;
+    private final int numRows;
+    private final int numColumns;
+    private final BoardSquare[][] squares;
 
     public GameBoard(int numRows, int numColumns) {
         /*
@@ -55,11 +55,7 @@ public class GameBoard {
         A method which returns true if the two parameters in the method call are appropriate indexes in the
         squares array
          */
-        if (row >= this.numRows || column >= this.numColumns || row<0 || column < 0) {
-            return false;
-        } else {
-            return true;
-        }
+        return row < this.numRows && column < this.numColumns && row >= 0 && column >= 0;
     }
 
     private void setUpEmptyBoard() {

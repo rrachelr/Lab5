@@ -11,7 +11,12 @@ public class Rules {
         checkBounds = game.getGameBoard().inBounds(rowPlayer, colPlayer);
         checkFrom = game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece().getTeamColor();
         checkEmpty = game.getGameBoard().getSquares()[rowPlayer][colPlayer].isEmpty();
-        checkMovePath = game.getGameBoard().getSquares()[rowPiece][rowPiece].getPiece().validMovePath(rowPiece, colPiece, rowPlayer, colPlayer);
+        if (game.getGameBoard().getSquares()[rowPiece][rowPiece].getPiece()==null) {
+            checkMovePath=false;
+        }
+        else {
+            checkMovePath = game.getGameBoard().getSquares()[rowPiece][rowPiece].getPiece().validMovePath(rowPiece, colPiece, rowPlayer, colPlayer);
+        }
         if (action == 'M') {
             if (checkBounds == true && checkFrom == currentTeam) {
                 if (checkEmpty == true) {

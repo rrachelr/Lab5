@@ -1,5 +1,5 @@
-Rules.java
- Rules
+Attacker.java
+ Attacker
 Action.java
  Action
 GameBoard.java
@@ -34,7 +34,7 @@ Game.java
  Game
 ActionSpawn.java
  ActionSpawn
+Rules.java
+ Rules
 Controller.java
  Controller
-Attacker.java
- Attacker

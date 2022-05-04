@@ -11,7 +11,6 @@ public class ActionAttack extends Action {
         Piece removedPiece = toSquare.removePiece();
         if ((fromSquare.getPiece() instanceof PieceEvilMinion) && (removedPiece instanceof PieceMinion)
                 && (fromSquare.getPiece().getTeamColor().equals(removedPiece.getTeamColor()))) {
-            System.out.println("xxx");
             game.getCurrentTeam().removePieceFromTeam(removedPiece);
             PieceEvilMinion newEvilMinion = new PieceEvilMinion();
             game.getCurrentTeam().addPieceToTeam(newEvilMinion);

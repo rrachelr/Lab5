@@ -32,7 +32,6 @@ public class Controller {
                 1,4,false, true));
         // Create a team object
         Team teamB = new Team("Red",piecesTeamB);
-
         // Create an instance of the game
         return new GameS22(8, 8,teamA, teamB);
     }

@@ -8,8 +8,8 @@ public class ActionRecruit extends Action {
         BoardSquare fromSquare = game.getGameBoard().getSquares()[rowFrom][colFrom];
         BoardSquare toSquare = game.getGameBoard().getSquares()[rowTo][colTo];
         fromSquare.getPiece().speak();
-        Piece removed = toSquare.removePiece();
-        game.getCurrentTeam().addPieceToTeam(removed);
+        game.getCurrentTeam().addPieceToTeam(toSquare.getPiece());
+        game.getOpponentTeam().removePieceFromTeam(toSquare.getPiece());
         game.changeTurn();
     }
 }

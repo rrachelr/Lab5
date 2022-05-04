@@ -10,12 +10,12 @@ PieceBlueHen.java
  PieceBlueHen
 PieceEvilMinion.java
  PieceEvilMinion
-ActionRecruit.java
- ActionRecruit
+Rules.java
+ Rules
 PieceMinion.java
  PieceMinion
-ActionAttack.java
- ActionAttack
+ActionRecruit.java
+ ActionRecruit
 Recruiter.java
  Recruiter
 ActionMove.java
@@ -34,7 +34,7 @@ Game.java
  Game
 ActionSpawn.java
  ActionSpawn
-Rules.java
- Rules
+ActionAttack.java
+ ActionAttack
 Controller.java
  Controller

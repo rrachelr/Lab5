@@ -32,9 +32,9 @@ GameS22.java
  GameS22
 Game.java
  Game
-ActionSpawn.java
- ActionSpawn
 ActionAttack.java
  ActionAttack
+ActionSpawn.java
+ ActionSpawn
 Controller.java
  Controller

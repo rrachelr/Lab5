@@ -1,7 +1,7 @@
 public class ActionSpawn extends Action{
 
     public ActionSpawn(GameS22 game, int rowFrom, int colFrom, int rowTo, int colTo) {
-        super(game, rowFrom, colFrom, rowTo, colFrom);
+        super(game, rowFrom, colFrom, rowTo, colTo);
     }
 
     public void performAction() {

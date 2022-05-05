@@ -1,6 +1,26 @@
-import java.util.ArrayList;
-
+/**
+ * <h1>Lab7</h1>
+ * <h2>CISC181-042L/040L Spring 2022</h2>
+ * <h3>University of Delaware</h3>
+ * This program creates the Rules class, which ensures each
+ * action performed abides by the rules of the game.
+ * @author Rachel Robins and Sean Johnson
+ * @since 2022-04-28
+ * @version 1
+ */
 public class Rules {
+    /**
+     * This method checks an action that the player wants to perform, and if it follows
+     * passes each of the checks performed in the if statement, then true is returned
+     * and the piece may perform the action. Otherwise, false is returned.
+     * @param game
+     * @param rowPiece
+     * @param colPiece
+     * @param rowPlayer
+     * @param colPlayer
+     * @param action
+     * @return
+     */
     public static boolean checkValidAction(GameS22 game, int rowPiece, int colPiece, int rowPlayer, int colPlayer, char action) {
         boolean checkBounds, checkEmpty, checkMovePath;
         String checkFrom, checkTo, currentTeam, oppTeam;

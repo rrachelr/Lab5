@@ -64,7 +64,7 @@ public class Controller {
 
     public void playGame() {
         boolean gameEnd = game.isGameEnded();
-        while (!gameEnd) {
+        while (gameEnd == false) {
             view.getPlayersNextAction(game);
             boolean ruling = Rules.checkValidAction(game, view.getRowFrom(), view.getColFrom(), view.getRowTo(), view.getColTo(), view.getActionType());
             while (!ruling) {
@@ -73,6 +73,7 @@ public class Controller {
             }
             carryOutAction(view.getRowFrom(), view.getColFrom(), view.getRowTo(), view.getColTo(), view.getActionType());
             view.updateView(game);
+            gameEnd = game.isGameEnded();
         }
         view.printEndOfGameMessage(game);
     }

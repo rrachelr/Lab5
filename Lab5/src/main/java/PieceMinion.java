@@ -30,7 +30,12 @@ public class PieceMinion extends Piece implements Recruiter{
     }
 
     @Override
-    public boolean validRecruitPath(int rowBoard, int colBoard, int rowPiece, int colPiece) {
+    public boolean validAttackPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
+        return true;
+    }
+
+    @Override
+    public boolean validRecruitPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
         return true;
     }
 
@@ -42,8 +47,11 @@ public class PieceMinion extends Piece implements Recruiter{
 
    public boolean validMovePath(int fromSquareRow, int fromSquareCol,
                                  int toSquareRow, int toSquareCol) {
-        // You will implement this method in a later step
-        // each Piece will have a different valid path
+        return true;
+    }
+
+    @Override
+    public boolean validSpawnPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
         return true;
     }
 

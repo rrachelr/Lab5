@@ -41,6 +41,11 @@ public class PieceBuzz extends Piece implements Attacker {
     }
 
     @Override
+    public boolean validRecruitPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
+        return true;
+    }
+
+    @Override
     public boolean validAttackPath(int rowBoard, int colBoard, int rowPiece, int colPiece) {
         return true;
     }
@@ -56,8 +61,11 @@ public class PieceBuzz extends Piece implements Attacker {
 
     public boolean validMovePath(int fromSquareRow, int fromSquareCol,
                                  int toSquareRow, int toSquareCol) {
-        // You will implement this method in a later step
-        // each Piece will have a different valid path
+        return true;
+    }
+
+    @Override
+    public boolean validSpawnPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
         return true;
     }
 

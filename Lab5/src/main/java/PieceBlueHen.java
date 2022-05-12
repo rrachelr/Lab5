@@ -38,8 +38,15 @@ public class PieceBlueHen extends Piece implements Attacker, Recruiter {
     }
 
     @Override
-    public boolean validAttackPath(int rowBoard, int colBoard, int rowPiece, int colPiece) {
-        return true;
+    public boolean validAttackPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
+        if (canFly()) {
+            return true;
+        } else {
+            if ((fromSquareCol >= (toSquareCol - 1) && fromSquareCol <= (toSquareCol + 1)) && fromSquareRow == toSquareRow) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void setNumRecruits(int numRecruits)    {
@@ -47,8 +54,15 @@ public class PieceBlueHen extends Piece implements Attacker, Recruiter {
     }
 
     @Override
-    public boolean validRecruitPath(int rowBoard, int colBoard, int rowPiece, int colPiece) {
-        return true;
+    public boolean validRecruitPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
+        if (canFly()) {
+            return true;
+        } else {
+            if ((fromSquareRow >= (toSquareRow - 1) && fromSquareRow <= (toSquareRow + 1)) && fromSquareCol == toSquareCol) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void updateFly()    {
@@ -59,12 +73,28 @@ public class PieceBlueHen extends Piece implements Attacker, Recruiter {
         System.out.println("Go UD!");
     }
 
-    public boolean validMovePath(int fromSquareRow, int fromSquareCol,
+    @Override
+    public boolean validMovePath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
+        if (canFly()) {
+            return true;
+        } else {
+            if ((toSquareRow >= (fromSquareRow - 1) && toSquareRow <= (fromSquareRow + 1)) && (toSquareCol >= (fromSquareCol -1) && toSquareCol <= (fromSquareCol + 1))) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-                                 int toSquareRow, int toSquareCol) {
-        // You will implement this method in a later step
-        // each Piece will have a different valid path
-        return true;
+    @Override
+    public boolean validSpawnPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
+        if (canFly()) {
+            return true;
+        } else {
+            if ((toSquareRow == (fromSquareRow - 1) || toSquareRow == (fromSquareRow + 1)) && (fromSquareCol == (toSquareCol - 1) || fromSquareCol == (toSquareCol + 1))) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public PieceBlueHen spawn()    {

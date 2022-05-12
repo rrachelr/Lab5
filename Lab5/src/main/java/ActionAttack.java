@@ -32,7 +32,6 @@ public class ActionAttack extends Action {
             PieceEvilMinion newEvilMinion = new PieceEvilMinion();
             game.getCurrentTeam().addPieceToTeam(newEvilMinion);
             game.getGameBoard().getSquares()[rowTo][colTo].setPiece(newEvilMinion);
-
         }
         else {
             game.getOpponentTeam().removePieceFromTeam(removedPiece);

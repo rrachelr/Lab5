@@ -33,21 +33,9 @@ public class Rules {
         checkEmpty = game.getGameBoard().getSquares()[rowPlayer][colPlayer].isEmpty();
         checkLava = game.getGameBoard().getSquares()[rowPlayer][colPlayer].isLava();
         checkMovePath = game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece().validMovePath(rowPiece, colPiece, rowPlayer, colPlayer);
-        checkAttackPath = ((Attacker) game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece()).validAttackPath(rowPiece, colPiece, rowPlayer, colPlayer);
-        checkRecruitPath = ((Recruiter) game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece()).validRecruitPath(rowPiece, colPiece, rowPlayer, colPlayer);
+        checkAttackPath = game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece().validAttackPath(rowPiece, colPiece, rowPlayer, colPlayer);
+        checkRecruitPath = game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece().validRecruitPath(rowPiece, colPiece, rowPlayer, colPlayer);
         checkSpawnPath = game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece().validSpawnPath(rowPiece, colPiece, rowPlayer, colPlayer);
-        /**if (game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece()==null) {
-            checkMovePath = false;
-            checkAttackPath = false;
-            checkRecruitPath = false;
-            checkSpawnPath = false;
-        }
-        else {
-            checkMovePath = game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece().validMovePath(rowPiece, colPiece, rowPlayer, colPlayer);
-            checkAttackPath = ((Attacker) game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece()).validAttackPath(rowPiece, colPiece, rowPlayer, colPlayer);
-            checkRecruitPath = ((Recruiter) game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece()).validRecruitPath(rowPiece, colPiece, rowPlayer, colPlayer);
-            checkSpawnPath = game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece().validSpawnPath(rowPiece, colPiece, rowPlayer, colPlayer);
-        }*/
         if (action == 'M') {
             if (checkBounds == true && checkFrom == currentTeam) {
                 if (checkEmpty == true && checkMovePath == true) {
@@ -56,7 +44,7 @@ public class Rules {
             }
         } else if (action == 'S') {
             if (checkFromPiece instanceof PieceBuzz == false) {
-                return checkBounds == true && checkFrom == currentTeam && checkEmpty == true && checkSpawnPath == true;
+                return checkBounds == true && (checkFrom == currentTeam) && checkEmpty == true && checkSpawnPath == true;
             }
         } else if (action == 'R') {
             if (checkFromPiece instanceof PieceBuzz == false && checkEmpty == false && checkLava == false) {

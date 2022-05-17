@@ -1,4 +1,4 @@
-public class PieceMinion extends Piece implements Recruiter{
+public class PieceMinion extends Piece implements Recruiter {
     protected int numRecruits;
     protected int numTimesSpawned;
 
@@ -30,13 +30,19 @@ public class PieceMinion extends Piece implements Recruiter{
     }
 
     @Override
-    public boolean validAttackPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
-        return true;
+    public boolean validRecruitPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
+        if (fromSquareCol == toSquareCol && fromSquareRow != toSquareRow) {
+            return true;
+        }
+        if (fromSquareRow == toSquareRow && (toSquareCol >= (fromSquareCol - 2) && toSquareCol <= (fromSquareCol + 2))) {
+            return true;
+        }
+        return false;
     }
 
     @Override
-    public boolean validRecruitPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
-        return true;
+    public boolean validAttackPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
+        return false;
     }
 
     public void setNumTimesSpawned(int numTimesSpawned) { this.numTimesSpawned = numTimesSpawned; }
@@ -45,15 +51,28 @@ public class PieceMinion extends Piece implements Recruiter{
         System.out.println("Bello!");
     }
 
-    @Override
-   public boolean validMovePath(int fromSquareRow, int fromSquareCol,
-                                 int toSquareRow, int toSquareCol) {
-        return true;
+   @Override
+   public boolean validMovePath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
+        if (fromSquareCol == toSquareCol && fromSquareRow != toSquareRow) {
+            return true;
+        } else if (fromSquareRow == toSquareRow && (toSquareCol >= (fromSquareCol - 2) && toSquareCol <= (fromSquareCol + 2))) {
+            return true;
+        }
+        return false;
     }
 
     @Override
     public boolean validSpawnPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
-        return true;
+        if (canSpawn()) {
+            return true;
+        }
+        if (fromSquareCol == toSquareCol && fromSquareRow != toSquareRow) {
+            return true;
+        }
+        if (fromSquareRow == toSquareRow && (toSquareCol >= (fromSquareCol - 2) && toSquareCol <= (fromSquareCol + 2))) {
+            return true;
+        }
+        return false;
     }
 
     public PieceMinion spawn(){

@@ -57,8 +57,13 @@ public class PieceEvilMinion extends PieceMinion implements Recruiter, Attacker{
     }
 
     @Override
-    public boolean validAttackPath(int rowBoard, int colBoard, int rowPiece, int colPiece) {
-        return true;
+    public boolean validAttackPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
+        if (fromSquareCol == toSquareCol && fromSquareRow != toSquareRow) {
+            return true;
+        } else if (fromSquareRow == toSquareRow && (toSquareCol >= (fromSquareCol - 2) && toSquareCol <= (fromSquareCol + 2))) {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -81,8 +86,13 @@ public class PieceEvilMinion extends PieceMinion implements Recruiter, Attacker{
      * @return
      */
     @Override
-    public boolean validMovePath(int rowBoard, int colBoard, int rowPiece, int colPiece) {
-        return true;
+    public boolean validMovePath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
+        if (fromSquareCol == toSquareCol && fromSquareRow != toSquareRow) {
+            return true;
+        } else if (fromSquareRow == toSquareRow && (toSquareCol >= (fromSquareCol - 2) && toSquareCol <= (fromSquareCol + 2))) {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -99,7 +109,12 @@ public class PieceEvilMinion extends PieceMinion implements Recruiter, Attacker{
     }
 
     @Override
-    public boolean validRecruitPath(int rowBoard, int colBoard, int rowPiece, int colPiece) {
-        return true;
+    public boolean validRecruitPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
+        if (fromSquareCol == toSquareCol && fromSquareRow != toSquareRow) {
+            return true;
+        } else if (fromSquareRow == toSquareRow && (toSquareCol >= (fromSquareCol - 2) && toSquareCol <= (fromSquareCol + 2))) {
+            return true;
+        }
+        return false;
     }
 }

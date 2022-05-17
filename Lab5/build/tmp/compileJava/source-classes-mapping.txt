@@ -1,5 +1,5 @@
-ActionSpawn.java
- ActionSpawn
+Piece.java
+ Piece
 Action.java
  Action
 GameBoard.java
@@ -8,10 +8,10 @@ GameS22.java
  GameS22
 BoardSquare.java
  BoardSquare
-PieceMinion.java
- PieceMinion
-ActionRecruit.java
- ActionRecruit
+PieceBlueHen.java
+ PieceBlueHen
+PieceBuzz.java
+ PieceBuzz
 Game.java
  Game
 Attacker.java
@@ -24,17 +24,17 @@ Team.java
  Team
 TextView.java
  TextView
-Piece.java
- Piece
-PieceEvilMinion.java
- PieceEvilMinion
-PieceBuzz.java
- PieceBuzz
-Rules.java
- Rules
-PieceBlueHen.java
- PieceBlueHen
+ActionRecruit.java
+ ActionRecruit
+PieceMinion.java
+ PieceMinion
+ActionSpawn.java
+ ActionSpawn
 ActionAttack.java
  ActionAttack
+PieceEvilMinion.java
+ PieceEvilMinion
+Rules.java
+ Rules
 Controller.java
  Controller

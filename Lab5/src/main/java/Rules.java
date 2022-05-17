@@ -63,6 +63,8 @@ public class Rules {
                     if (((PieceEvilMinion) checkFromPiece).canAttack() && checkAttackPath) {
                         return checkTo.equals(oppTeam) || checkToPiece instanceof PieceMinion;
                     }
+                } else if (checkFromPiece instanceof PieceRoboMonkey && checkTo.equals(oppTeam)) {
+                    return checkAttackPath;
                 }
             }
         } else if (action == 'V' || action == 'v') {

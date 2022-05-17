@@ -13,11 +13,14 @@ public class ActionVaporize extends Action{
         colPlus = colTo + 1;
         if (rowNeg < 0) {
             rowNeg = rowTo;
-        } else if (rowPlus > 7) {
+        }
+        if (rowPlus > 7) {
             rowPlus = rowTo;
-        } else if (colNeg < 0) {
+        }
+        if (colNeg < 0) {
             colNeg = colTo;
-        } else if (colPlus > 7) {
+        }
+        if (colPlus > 7) {
             colPlus = colTo;
         }
         fromSquare.getPiece().speak();

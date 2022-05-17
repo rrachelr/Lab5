@@ -25,6 +25,10 @@ public class PieceRoboMonkey extends Piece implements Attacker, Recruiter{
 
     @Override
     public boolean validAttackPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
+        if (numAttacks % 2 != 0) {
+            numAttacks++;
+            return false;
+        }
         for (int i=fromSquareRow-1; i < fromSquareRow + 2; i++) {
             for (int j = fromSquareCol - 1; j < fromSquareCol + 2; j++) {
                 if (toSquareRow == i && toSquareCol == j) {

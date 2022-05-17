@@ -33,9 +33,8 @@ public class Rules {
         checkEmpty = game.getGameBoard().getSquares()[rowPlayer][colPlayer].isEmpty();
         checkLava = game.getGameBoard().getSquares()[rowPlayer][colPlayer].isLava();
         checkMovePath = game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece().validMovePath(rowPiece, colPiece, rowPlayer, colPlayer);
-        checkAttackPath = game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece().validAttackPath(rowPiece, colPiece, rowPlayer, colPlayer);
-        checkRecruitPath = game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece().validRecruitPath(rowPiece, colPiece, rowPlayer, colPlayer);
         checkSpawnPath = game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece().validSpawnPath(rowPiece, colPiece, rowPlayer, colPlayer);
+
         if (action == 'M') {
             if (checkBounds == true && checkFrom == currentTeam) {
                 if (checkEmpty == true && checkMovePath == true) {
@@ -47,11 +46,13 @@ public class Rules {
                 return checkBounds == true && (checkFrom == currentTeam) && checkEmpty == true && checkSpawnPath == true;
             }
         } else if (action == 'R') {
+            checkRecruitPath = ((Recruiter) game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece()).validRecruitPath(rowPiece, colPiece, rowPlayer, colPlayer);
             if (checkFromPiece instanceof PieceBuzz == false && checkEmpty == false && checkLava == false) {
                 checkTo = game.getGameBoard().getSquares()[rowPlayer][colPlayer].getPiece().getTeamColor();
                 return checkBounds == true && checkFrom == currentTeam && checkTo == oppTeam && checkRecruitPath == true;
             }
         } else if (action == 'A') {
+            checkAttackPath = ((Attacker) game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece()).validAttackPath(rowPiece, colPiece, rowPlayer, colPlayer);
             if (checkBounds == true && checkFrom == currentTeam && checkEmpty == false && checkLava == false) {
                 checkTo = game.getGameBoard().getSquares()[rowPlayer][colPlayer].getPiece().getTeamColor();
                 if (checkFromPiece instanceof PieceBuzz && checkTo == oppTeam) {

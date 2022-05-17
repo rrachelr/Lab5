@@ -41,13 +41,14 @@ public class PieceBuzz extends Piece implements Attacker {
     }
 
     @Override
-    public boolean validRecruitPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
-        return true;
-    }
-
-    @Override
-    public boolean validAttackPath(int rowBoard, int colBoard, int rowPiece, int colPiece) {
-        return true;
+    public boolean validAttackPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
+        if (fromSquareRow == toSquareRow){
+            return true;
+        }
+        if (fromSquareCol == toSquareCol && (toSquareRow == (fromSquareRow - 2) || toSquareRow == (fromSquareRow + 2))) {
+            return true;
+        }
+        return false;
     }
 
     public void updateNumTimesBeenAttacked(){
@@ -60,14 +61,13 @@ public class PieceBuzz extends Piece implements Attacker {
     }
 
     @Override
-    public boolean validMovePath(int fromSquareRow, int fromSquareCol,
-                                 int toSquareRow, int toSquareCol) {
+    public boolean validMovePath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
         return true;
     }
 
     @Override
     public boolean validSpawnPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
-        return true;
+        return false;
     }
 
     public Piece spawn(){

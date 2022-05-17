@@ -58,9 +58,9 @@ public class PieceEvilMinion extends PieceMinion implements Recruiter, Attacker{
 
     @Override
     public boolean validAttackPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
-        if (fromSquareCol == toSquareCol && fromSquareRow != toSquareRow) {
+        if (fromSquareCol == toSquareCol) {
             return true;
-        } else if (fromSquareRow == toSquareRow && (toSquareCol >= (fromSquareCol - 2) && toSquareCol <= (fromSquareCol + 2))) {
+        } else if (fromSquareRow == toSquareRow && (toSquareCol == (fromSquareCol - 2) || toSquareCol == (fromSquareCol + 2))) {
             return true;
         }
         return false;
@@ -87,9 +87,9 @@ public class PieceEvilMinion extends PieceMinion implements Recruiter, Attacker{
      */
     @Override
     public boolean validMovePath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
-        if (fromSquareCol == toSquareCol && fromSquareRow != toSquareRow) {
+        if (fromSquareCol == toSquareCol) {
             return true;
-        } else if (fromSquareRow == toSquareRow && (toSquareCol >= (fromSquareCol - 2) && toSquareCol <= (fromSquareCol + 2))) {
+        } else if (fromSquareRow == toSquareRow && (toSquareCol == (fromSquareCol - 2) || toSquareCol == (fromSquareCol + 2))) {
             return true;
         }
         return false;
@@ -110,9 +110,9 @@ public class PieceEvilMinion extends PieceMinion implements Recruiter, Attacker{
 
     @Override
     public boolean validRecruitPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
-        if (fromSquareCol == toSquareCol && fromSquareRow != toSquareRow) {
+        if (fromSquareCol == toSquareCol) {
             return true;
-        } else if (fromSquareRow == toSquareRow && (toSquareCol >= (fromSquareCol - 2) && toSquareCol <= (fromSquareCol + 2))) {
+        } else if (fromSquareRow == toSquareRow && (toSquareCol == (fromSquareCol - 2) || toSquareCol == (fromSquareCol + 2))) {
             return true;
         }
         return false;

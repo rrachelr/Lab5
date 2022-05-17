@@ -1,40 +1,40 @@
+Attacker.java
+ Attacker
+Recruiter.java
+ Recruiter
 Piece.java
  Piece
 Action.java
  Action
 GameBoard.java
  GameBoard
-GameS22.java
- GameS22
-BoardSquare.java
- BoardSquare
 PieceBlueHen.java
  PieceBlueHen
-PieceBuzz.java
- PieceBuzz
+BoardSquare.java
+ BoardSquare
+GameS22.java
+ GameS22
+ActionRecruit.java
+ ActionRecruit
 Game.java
  Game
-Attacker.java
- Attacker
-Recruiter.java
- Recruiter
+TextView.java
+ TextView
 ActionMove.java
  ActionMove
 Team.java
  Team
-TextView.java
- TextView
-ActionRecruit.java
- ActionRecruit
+PieceBuzz.java
+ PieceBuzz
+Rules.java
+ Rules
+PieceEvilMinion.java
+ PieceEvilMinion
 PieceMinion.java
  PieceMinion
 ActionSpawn.java
  ActionSpawn
 ActionAttack.java
  ActionAttack
-PieceEvilMinion.java
- PieceEvilMinion
-Rules.java
- Rules
 Controller.java
  Controller

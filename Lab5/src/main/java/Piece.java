@@ -105,10 +105,6 @@ public abstract class Piece {
 
     public abstract boolean validSpawnPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol);
 
-    public abstract boolean validRecruitPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol);
-
-    public abstract boolean validAttackPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol);
-
     public abstract Piece spawn();
 
     /**

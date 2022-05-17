@@ -31,17 +31,12 @@ public class PieceMinion extends Piece implements Recruiter {
 
     @Override
     public boolean validRecruitPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
-        if (fromSquareCol == toSquareCol && fromSquareRow != toSquareRow) {
+        if (fromSquareCol == toSquareCol) {
             return true;
         }
-        if (fromSquareRow == toSquareRow && (toSquareCol >= (fromSquareCol - 2) && toSquareCol <= (fromSquareCol + 2))) {
+        if (fromSquareRow == toSquareRow && (toSquareCol == (fromSquareCol - 2) || toSquareCol == (fromSquareCol + 2))) {
             return true;
         }
-        return false;
-    }
-
-    @Override
-    public boolean validAttackPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
         return false;
     }
 
@@ -53,9 +48,9 @@ public class PieceMinion extends Piece implements Recruiter {
 
    @Override
    public boolean validMovePath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
-        if (fromSquareCol == toSquareCol && fromSquareRow != toSquareRow) {
+        if (fromSquareCol == toSquareCol) {
             return true;
-        } else if (fromSquareRow == toSquareRow && (toSquareCol >= (fromSquareCol - 2) && toSquareCol <= (fromSquareCol + 2))) {
+        } else if (fromSquareRow == toSquareRow && (toSquareCol == (fromSquareCol - 2) || toSquareCol == (fromSquareCol + 2))) {
             return true;
         }
         return false;
@@ -64,13 +59,12 @@ public class PieceMinion extends Piece implements Recruiter {
     @Override
     public boolean validSpawnPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
         if (canSpawn()) {
-            return true;
-        }
-        if (fromSquareCol == toSquareCol && fromSquareRow != toSquareRow) {
-            return true;
-        }
-        if (fromSquareRow == toSquareRow && (toSquareCol >= (fromSquareCol - 2) && toSquareCol <= (fromSquareCol + 2))) {
-            return true;
+            if (fromSquareCol == toSquareCol) {
+                return true;
+            }
+            if (fromSquareRow == toSquareRow && (toSquareCol == (fromSquareCol - 2) || toSquareCol == (fromSquareCol + 2))) {
+                return true;
+            }
         }
         return false;
     }

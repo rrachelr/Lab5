@@ -19,6 +19,7 @@ public abstract class Game {
     protected String turn;
     protected int numTurn;
     protected int totalTurnCount;
+    public boolean firstToTwo;
 
     /**
      * This method creates a GameBoard and places pieces from each team on
@@ -57,6 +58,7 @@ public abstract class Game {
         initializeGameBoard(numRows, numCols);
         this.numTurn = 0;
         this.totalTurnCount=0;
+        firstToTwo=false;
     }
 
     public GameBoard getGameBoard() {
@@ -105,7 +107,18 @@ public abstract class Game {
         if (this.totalTurnCount%2==0) {
             this.numTurn++;
         }
-        if (this.turn == team1.getTeamColor()) {
+
+        if (this.turn == team1.getTeamColor() && team2.getTeamPieces().size() == 2 && firstToTwo==false) {
+            this.turn = team1.getTeamColor();
+            firstToTwo=true;
+            this.totalTurnCount--;
+        }
+        else if (this.turn == team2.getTeamColor() && team1.getTeamPieces().size() == 2 && firstToTwo==false) {
+            this.turn = team2.getTeamColor();
+            firstToTwo=true;
+            this.totalTurnCount--;
+        }
+        else if (this.turn == team1.getTeamColor()) {
             this.turn = team2.getTeamColor();
         } else {
             this.turn = team1.getTeamColor();

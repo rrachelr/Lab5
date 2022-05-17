@@ -2,10 +2,10 @@ Piece.java
  Piece
 PieceBuzz.java
  PieceBuzz
-GameS22.java
- GameS22
-TextView.java
- TextView
+BoardSquare.java
+ BoardSquare
+GameBoard.java
+ GameBoard
 PieceBlueHen.java
  PieceBlueHen
 PieceEvilMinion.java
@@ -18,23 +18,23 @@ Team.java
  Team
 Recruiter.java
  Recruiter
-Action.java
- Action
-ActionMove.java
- ActionMove
-ActionAttack.java
- ActionAttack
-GameBoard.java
- GameBoard
-BoardSquare.java
- BoardSquare
-ActionRecruit.java
- ActionRecruit
-ActionSpawn.java
- ActionSpawn
 Game.java
  Game
+ActionMove.java
+ ActionMove
 Rules.java
  Rules
+Action.java
+ Action
+TextView.java
+ TextView
+ActionRecruit.java
+ ActionRecruit
+GameS22.java
+ GameS22
+ActionSpawn.java
+ ActionSpawn
+ActionAttack.java
+ ActionAttack
 Controller.java
  Controller

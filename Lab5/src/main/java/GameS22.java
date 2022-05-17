@@ -34,11 +34,15 @@ public class GameS22 extends Game {
      */
     @Override
     public Team getWinner() {
-        if ((team1.getTeamPieces().size() > team2.getTeamPieces().size()) && getNumTurns()>=2) {
+        if ((team1.getTeamPieces().size() > team2.getTeamPieces().size()) && getNumTurns()>=4) {
             return team1;
-        } else if ((team1.getTeamPieces().size() < team2.getTeamPieces().size()) && getNumTurns()>=2) {
+        } else if ((team1.getTeamPieces().size() < team2.getTeamPieces().size()) && getNumTurns()>=4) {
             return team2;
-        } else if ((team1.getTeamPieces().size() == team2.getTeamPieces().size()) && getNumTurns()>=2) {
+        } else if ((team1.getTeamPieces().size() == team2.getTeamPieces().size()) && getNumTurns()>=4) {
+            return team1;
+        } else if (team1.getTeamPieces().size() == 0) {
+            return team2;
+        } else if (team2.getTeamPieces().size() ==0) {
             return team1;
         }
         else {

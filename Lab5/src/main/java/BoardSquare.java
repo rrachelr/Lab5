@@ -26,7 +26,7 @@ public class BoardSquare {
         int ranNum = (int) (1+(Math.random() * 10));
         this.boardSquareColor=color;
         this.piece = null;
-        if (ranNum%5==0) {
+        if (ranNum%9==0) {
             this.lava = true;
             this.emptySpace=false;
         }

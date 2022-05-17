@@ -1,3 +1,4 @@
+import java.util.Random;
 /**
  * <h1>Lab05</h1>
  * <h2>CISC181-042L/040L Spring 2022</h2>
@@ -16,14 +17,23 @@ public class BoardSquare {
     private boolean emptySpace;
     private Piece piece;
     private String boardSquareColor;
+    private boolean isLava;
 
     public BoardSquare(String color) {
         /*
         the BoardSquare constructor
          */
+        int ranNum = (int) (1+(Math.random() * 10));
         this.boardSquareColor=color;
-        this.emptySpace=true;
         this.piece = null;
+        if (ranNum%5==0) {
+            this.isLava = true;
+            this.emptySpace=false;
+        }
+        else {
+            this.isLava=false;
+            this.emptySpace=true;
+        }
     }
 
     public Piece getPiece() {
@@ -71,7 +81,10 @@ public class BoardSquare {
         /*
         A toString method for the BoardSquare class which overrides the objects toString method.
          */
-        if (this.emptySpace) {
+        if (this.isLava) {
+            return "--Lava-";
+        }
+        else if (this.emptySpace) {
             return "-------";
         }
         else {

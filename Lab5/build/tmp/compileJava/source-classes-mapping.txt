@@ -34,11 +34,11 @@ ActionSpawn.java
  ActionSpawn
 TextView.java
  TextView
-Rules.java
- Rules
-PieceRoboMonkey.java
- PieceRoboMonkey
 ActionVaporize.java
  ActionVaporize
+PieceRoboMonkey.java
+ PieceRoboMonkey
+Rules.java
+ Rules
 Controller.java
  Controller

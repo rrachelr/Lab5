@@ -22,6 +22,9 @@ public class Rules {
      * @return
      */
     public static boolean checkValidAction(GameS22 game, int rowPiece, int colPiece, int rowPlayer, int colPlayer, char action) {
+        if (game.getGameBoard().getSquares()[rowPiece][colPiece].isEmpty()) {
+            return false;
+        }
         boolean checkBounds, checkEmpty, checkMovePath, checkAttackPath, checkRecruitPath, checkSpawnPath, checkLava, checkVaporizePath;
         String checkFrom, checkTo, currentTeam, oppTeam;
         currentTeam = game.getCurrentTeam().getTeamColor();
@@ -34,7 +37,6 @@ public class Rules {
         checkLava = game.getGameBoard().getSquares()[rowPlayer][colPlayer].isLava();
         checkMovePath = game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece().validMovePath(rowPiece, colPiece, rowPlayer, colPlayer);
         checkSpawnPath = game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece().validSpawnPath(rowPiece, colPiece, rowPlayer, colPlayer);
-
         if (action == 'M' || action == 'm') {
             if (checkBounds && checkFrom.equals(currentTeam)) {
                 if (checkEmpty && checkMovePath) {

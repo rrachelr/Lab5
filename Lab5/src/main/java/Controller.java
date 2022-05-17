@@ -16,6 +16,7 @@ public class Controller {
                 0,false,true));
         piecesTeamA.add(new PieceEvilMinion('E',"Blu",0,
                 0,0,false, true));
+        piecesTeamA.add(new PieceRoboMonkey('R', "Blu", 0, 0, false, true));
         // Create a team object
         Team teamA = new Team("Blu",piecesTeamA);
 
@@ -30,6 +31,7 @@ public class Controller {
                 true,false,true));
         piecesTeamB.add(new PieceEvilMinion('E',"Red",0,
                 0,0,false, true));
+        piecesTeamB.add(new PieceRoboMonkey('R', "Red", 0, 0, false, true));
         // Create a team object
         Team teamB = new Team("Red",piecesTeamB);
         // Create an instance of the game

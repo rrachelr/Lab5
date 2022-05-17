@@ -84,7 +84,7 @@ public class PieceRoboMonkey extends Piece implements Attacker, Recruiter{
 
     @Override
     public boolean validRecruitPath(int fromSquareRow, int fromSquareCol, int toSquareRow, int toSquareCol) {
-        if (fromSquareRow + 1 == toSquareRow && fromSquareCol == toSquareCol) {
+        if (fromSquareRow - 1 == toSquareRow && fromSquareCol == toSquareCol) {
             return true;
         }
         if (fromSquareCol + 1 == toSquareCol && fromSquareRow == toSquareRow) {

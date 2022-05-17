@@ -29,7 +29,7 @@ public class TextView {
     }
 
     public static char getUsersNextActionType(Scanner scan) {
-        System.out.println("Enter one of these characters or a word beginning with them: A, M, R, S");
+        System.out.println("Enter one of these characters or a word beginning with them: A, M, R, S, V");
         char answer;
         String word;
         word = scan.nextLine();

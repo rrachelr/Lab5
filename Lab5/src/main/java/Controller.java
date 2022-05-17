@@ -54,6 +54,9 @@ public class Controller {
         else if (actionType=='R'||actionType=='r') {
             ActionRecruit actionRecruit = new ActionRecruit(game,rowFrom,colFrom,rowTo,colTo);
             actionRecruit.performAction();
+        } else if (actionType=='V' || actionType == 'v') {
+            ActionVaporize actionVaporize = new ActionVaporize(game, rowFrom,colFrom, rowTo, colTo);
+            actionVaporize.performAction();
         }
         else {
             ActionSpawn actionSpawn = new ActionSpawn(game,rowFrom,colFrom,rowTo,colTo);

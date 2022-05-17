@@ -17,6 +17,8 @@ public abstract class Game {
     protected Team team1;
     protected Team team2;
     protected String turn;
+    protected int numTurn;
+    protected int totalTurnCount;
 
     /**
      * This method creates a GameBoard and places pieces from each team on
@@ -53,6 +55,8 @@ public abstract class Game {
         this.team2 = team2;
         this.turn = team1.getTeamColor();
         initializeGameBoard(numRows, numCols);
+        this.numTurn = 0;
+        this.totalTurnCount=0;
     }
 
     public GameBoard getGameBoard() {
@@ -75,6 +79,10 @@ public abstract class Game {
         }
     }
 
+    public int getNumTurns() {
+        return this.numTurn;
+    }
+
     /**
      * If it is the team's turn, turn is set to true. Otherwise, it
      * is set to false.
@@ -93,6 +101,10 @@ public abstract class Game {
      * This method swaps the value of turn to the other team
      */
     public void changeTurn() {
+        this.totalTurnCount++;
+        if (this.totalTurnCount%2==0) {
+            this.numTurn++;
+        }
         if (this.turn == team1.getTeamColor()) {
             this.turn = team2.getTeamColor();
         } else {

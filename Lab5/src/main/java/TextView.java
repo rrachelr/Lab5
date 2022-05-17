@@ -81,7 +81,12 @@ public class TextView {
 
     public void printEndOfGameMessage(GameS22 game) {
         System.out.println("The game has ended!");
-        System.out.println("The team that one is: Team "+ game.getWinner().getTeamColor());
+        if (game.getCurrentTeam().getTeamPieces().size() == game.getOpponentTeam().getTeamPieces().size()) {
+            System.out.println("The game ended in a draw");
+        }
+        else {
+            System.out.println("The team that one is: Team " + game.getWinner().getTeamColor());
+        }
     }
 
 }

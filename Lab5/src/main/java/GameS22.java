@@ -20,6 +20,8 @@ public class GameS22 extends Game {
      * getWinner.
      * @return
      */
+
+
     @Override
     public boolean isAWinner() {
         return getWinner() != null;
@@ -32,11 +34,14 @@ public class GameS22 extends Game {
      */
     @Override
     public Team getWinner() {
-        if (team1.getTeamPieces().size() == 0) {
-            return team2;
-        } else if (team2.getTeamPieces().size() == 0) {
+        if ((team1.getTeamPieces().size() > team2.getTeamPieces().size()) && getNumTurns()>=2) {
             return team1;
-        } else {
+        } else if ((team1.getTeamPieces().size() < team2.getTeamPieces().size()) && getNumTurns()>=2) {
+            return team2;
+        } else if ((team1.getTeamPieces().size() == team2.getTeamPieces().size()) && getNumTurns()>=2) {
+            return team1;
+        }
+        else {
             return null;
         }
     }

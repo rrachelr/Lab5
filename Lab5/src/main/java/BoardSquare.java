@@ -17,7 +17,7 @@ public class BoardSquare {
     private boolean emptySpace;
     private Piece piece;
     private String boardSquareColor;
-    private boolean isLava;
+    private boolean lava;
 
     public BoardSquare(String color) {
         /*
@@ -27,11 +27,11 @@ public class BoardSquare {
         this.boardSquareColor=color;
         this.piece = null;
         if (ranNum%5==0) {
-            this.isLava = true;
+            this.lava = true;
             this.emptySpace=false;
         }
         else {
-            this.isLava=false;
+            this.lava=false;
             this.emptySpace=true;
         }
     }
@@ -48,6 +48,10 @@ public class BoardSquare {
         A getter method for the emptySpace field
          */
         return this.emptySpace;
+    }
+
+    public boolean isLava() {
+        return this.lava;
     }
 
     public String getSquareColor() {
@@ -81,7 +85,7 @@ public class BoardSquare {
         /*
         A toString method for the BoardSquare class which overrides the objects toString method.
          */
-        if (this.isLava) {
+        if (this.lava) {
             return "--Lava-";
         }
         else if (this.emptySpace) {

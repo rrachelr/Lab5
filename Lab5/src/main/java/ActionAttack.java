@@ -28,12 +28,14 @@ public class ActionAttack extends Action {
         Piece removedPiece = toSquare.removePiece();
         if ((fromSquare.getPiece() instanceof PieceEvilMinion) && (removedPiece instanceof PieceMinion)
                 && (fromSquare.getPiece().getTeamColor().equals(removedPiece.getTeamColor()))) {
+            ((Attacker) fromSquare.getPiece()).setNumAttacks(((Attacker) fromSquare.getPiece()).getNumAttacks() + 1);
             game.getCurrentTeam().removePieceFromTeam(removedPiece);
             PieceEvilMinion newEvilMinion = new PieceEvilMinion();
             game.getCurrentTeam().addPieceToTeam(newEvilMinion);
             game.getGameBoard().getSquares()[rowTo][colTo].setPiece(newEvilMinion);
         }
         else {
+            ((Attacker) fromSquare.getPiece()).setNumAttacks(((Attacker) fromSquare.getPiece()).getNumAttacks() + 1);
             game.getOpponentTeam().removePieceFromTeam(removedPiece);
             game.getGameBoard().getSquares()[rowTo][colTo].setPiece(fromSquare.getPiece());
             fromSquare.removePiece();

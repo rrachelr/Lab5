@@ -59,6 +59,7 @@ public class PieceBuzz extends Piece implements Attacker {
         System.out.println("To Infinity and Beyond!");
     }
 
+    @Override
     public boolean validMovePath(int fromSquareRow, int fromSquareCol,
                                  int toSquareRow, int toSquareCol) {
         return true;

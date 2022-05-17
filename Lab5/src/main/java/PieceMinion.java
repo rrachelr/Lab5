@@ -45,6 +45,7 @@ public class PieceMinion extends Piece implements Recruiter{
         System.out.println("Bello!");
     }
 
+    @Override
    public boolean validMovePath(int fromSquareRow, int fromSquareCol,
                                  int toSquareRow, int toSquareCol) {
         return true;

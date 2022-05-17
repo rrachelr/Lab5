@@ -32,7 +32,11 @@ public class Rules {
         checkFrom = game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece().getTeamColor();
         checkEmpty = game.getGameBoard().getSquares()[rowPlayer][colPlayer].isEmpty();
         checkLava = game.getGameBoard().getSquares()[rowPlayer][colPlayer].isLava();
-        if (game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece()==null) {
+        checkMovePath = game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece().validMovePath(rowPiece, colPiece, rowPlayer, colPlayer);
+        checkAttackPath = ((Attacker) game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece()).validAttackPath(rowPiece, colPiece, rowPlayer, colPlayer);
+        checkRecruitPath = ((Recruiter) game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece()).validRecruitPath(rowPiece, colPiece, rowPlayer, colPlayer);
+        checkSpawnPath = game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece().validSpawnPath(rowPiece, colPiece, rowPlayer, colPlayer);
+        /**if (game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece()==null) {
             checkMovePath = false;
             checkAttackPath = false;
             checkRecruitPath = false;
@@ -40,13 +44,13 @@ public class Rules {
         }
         else {
             checkMovePath = game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece().validMovePath(rowPiece, colPiece, rowPlayer, colPlayer);
-            checkAttackPath = game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece().validAttackPath(rowPiece, colPiece, rowPlayer, colPlayer);
-            checkRecruitPath = game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece().validRecruitPath(rowPiece, colPiece, rowPlayer, colPlayer);
+            checkAttackPath = ((Attacker) game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece()).validAttackPath(rowPiece, colPiece, rowPlayer, colPlayer);
+            checkRecruitPath = ((Recruiter) game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece()).validRecruitPath(rowPiece, colPiece, rowPlayer, colPlayer);
             checkSpawnPath = game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece().validSpawnPath(rowPiece, colPiece, rowPlayer, colPlayer);
-        }
+        }*/
         if (action == 'M') {
             if (checkBounds == true && checkFrom == currentTeam) {
-                if (checkEmpty == true) {
+                if (checkEmpty == true && checkMovePath == true) {
                     return true;
                 }
             }
@@ -60,14 +64,14 @@ public class Rules {
                 return checkBounds == true && checkFrom == currentTeam && checkTo == oppTeam && checkRecruitPath == true;
             }
         } else if (action == 'A') {
-            if (checkBounds == true && checkFrom == currentTeam && checkAttackPath == true && checkEmpty == false && checkLava == false) {
+            if (checkBounds == true && checkFrom == currentTeam && checkEmpty == false && checkLava == false) {
                 checkTo = game.getGameBoard().getSquares()[rowPlayer][colPlayer].getPiece().getTeamColor();
                 if (checkFromPiece instanceof PieceBuzz && checkTo == oppTeam) {
-                    return ((PieceBuzz) checkFromPiece).canAttack();
+                    return ((PieceBuzz) checkFromPiece).canAttack() && checkAttackPath;
                 } else if (checkFromPiece instanceof PieceBlueHen && checkTo == oppTeam) {
-                    return true;
+                    return checkAttackPath;
                 } else if (checkFromPiece instanceof PieceEvilMinion) {
-                    if (((PieceEvilMinion) checkFromPiece).canAttack()) {
+                    if (((PieceEvilMinion) checkFromPiece).canAttack() && checkAttackPath == true) {
                         return checkTo == oppTeam || checkToPiece instanceof PieceMinion;
                     }
                 }

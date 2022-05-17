@@ -10,12 +10,12 @@ public class Controller {
         ArrayList<Piece> piecesTeamA = new ArrayList<>();
         piecesTeamA.add(new PieceMinion('M',"Blu",
                 0,0,false,true));
-        piecesTeamA.add(new PieceBuzz('B',"Blu",2,1,
+        piecesTeamA.add(new PieceBuzz('B',"Blu",0,0,
                 true,false,true));
-        piecesTeamA.add(new PieceBlueHen('H',"Blu",3,
-                9,false,true));
-        piecesTeamA.add(new PieceEvilMinion('E',"Blu",1,
-                1,4,false, true));
+        piecesTeamA.add(new PieceBlueHen('H',"Blu",0,
+                0,false,true));
+        piecesTeamA.add(new PieceEvilMinion('E',"Blu",0,
+                0,0,false, true));
         // Create a team object
         Team teamA = new Team("Blu",piecesTeamA);
 
@@ -24,12 +24,12 @@ public class Controller {
         ArrayList<Piece> piecesTeamB = new ArrayList<>();
         piecesTeamB.add(new PieceMinion('M',"Red",
                 0,0,false,true));
-        piecesTeamB.add(new PieceBlueHen('H',"Red",3,
-                9,false,true));
-        piecesTeamB.add(new PieceBuzz('B',"Red",2,1,
+        piecesTeamB.add(new PieceBlueHen('H',"Red",0,
+                0,false,true));
+        piecesTeamB.add(new PieceBuzz('B',"Red",0,0,
                 true,false,true));
-        piecesTeamB.add(new PieceEvilMinion('E',"Red",1,
-                1,4,false, true));
+        piecesTeamB.add(new PieceEvilMinion('E',"Red",0,
+                0,0,false, true));
         // Create a team object
         Team teamB = new Team("Red",piecesTeamB);
         // Create an instance of the game

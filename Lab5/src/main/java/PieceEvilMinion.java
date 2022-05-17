@@ -80,7 +80,8 @@ public class PieceEvilMinion extends PieceMinion implements Recruiter, Attacker{
      * This method returns true
      * @return
      */
-    public boolean validMovePath() {
+    @Override
+    public boolean validMovePath(int rowBoard, int colBoard, int rowPiece, int colPiece) {
         return true;
     }
 

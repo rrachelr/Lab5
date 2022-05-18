@@ -36,9 +36,9 @@ Game.java
  Game
 ActionSpawn.java
  ActionSpawn
-ActionVaporize.java
- ActionVaporize
 ActionAttack.java
  ActionAttack
+ActionVaporize.java
+ ActionVaporize
 Controller.java
  Controller

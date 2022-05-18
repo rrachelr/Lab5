@@ -27,7 +27,7 @@ public class ActionVaporize extends Action{
         outerloop:
         for (i=rowNeg; (i < rowPlus + 1); i++) {
             for (int j=colNeg; (j < colPlus + 1); j++) {
-                if (!game.getGameBoard().getSquares()[i][j].isEmpty() && (game.getGameBoard().getSquares()[i][j].getPiece() != game.getGameBoard().getSquares()[rowTo][colTo].getPiece())) {
+                if (!game.getGameBoard().getSquares()[i][j].isEmpty() && (!(game.getGameBoard().getSquares()[i][j].isLava()))&& (game.getGameBoard().getSquares()[i][j].getPiece() != game.getGameBoard().getSquares()[rowTo][colTo].getPiece())) {
                     if (game.getGameBoard().getSquares()[i][j].getPiece().getTeamColor().equals(game.getCurrentTeam().getTeamColor())) {
                         game.getCurrentTeam().removePieceFromTeam(game.getGameBoard().getSquares()[i][j].removePiece());
                     } else {

@@ -48,12 +48,18 @@ public class Rules {
                 return checkBounds && (checkFrom.equals(currentTeam)) && checkEmpty && checkSpawnPath;
             }
         } else if (action == 'R' || action == 'r') {
+            if (checkFromPiece instanceof PieceBuzz) {
+                return false;
+            }
             checkRecruitPath = ((Recruiter) game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece()).validRecruitPath(rowPiece, colPiece, rowPlayer, colPlayer);
             if (!(checkFromPiece instanceof PieceBuzz) && !checkEmpty && !checkLava) {
                 checkTo = game.getGameBoard().getSquares()[rowPlayer][colPlayer].getPiece().getTeamColor();
                 return checkBounds && checkFrom.equals(currentTeam) && checkTo.equals(oppTeam) && checkRecruitPath;
             }
         } else if (action == 'A' || action == 'a') {
+            if (checkFromPiece instanceof PieceMinion && !(checkFromPiece instanceof PieceEvilMinion)) {
+                return false;
+            }
             checkAttackPath = ((Attacker) game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece()).validAttackPath(rowPiece, colPiece, rowPlayer, colPlayer);
             if (checkBounds && checkFrom.equals(currentTeam) && !checkEmpty && !checkLava) {
                 checkTo = game.getGameBoard().getSquares()[rowPlayer][colPlayer].getPiece().getTeamColor();

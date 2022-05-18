@@ -16,8 +16,8 @@ PieceMinion.java
  PieceMinion
 PieceBuzz.java
  PieceBuzz
-Rules.java
- Rules
+ActionSpawn.java
+ ActionSpawn
 Action.java
  Action
 GameBoard.java
@@ -38,7 +38,7 @@ GameS22.java
  GameS22
 Game.java
  Game
-ActionSpawn.java
- ActionSpawn
+Rules.java
+ Rules
 Controller.java
  Controller

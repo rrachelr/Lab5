@@ -112,11 +112,13 @@ public abstract class Game {
             this.turn = team1.getTeamColor();
             firstToTwo=true;
             this.totalTurnCount--;
+            System.out.println(team1.getTeamColor() + " Activated their additional turn!");
         }
         else if (this.turn == team2.getTeamColor() && team1.getTeamPieces().size() == 2 && firstToTwo==false) {
             this.turn = team2.getTeamColor();
             firstToTwo=true;
             this.totalTurnCount--;
+            System.out.println(team2.getTeamColor() + " Activated their additional turn!");
         }
         else if (this.turn == team1.getTeamColor()) {
             this.turn = team2.getTeamColor();

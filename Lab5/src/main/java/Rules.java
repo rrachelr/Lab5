@@ -22,7 +22,10 @@ public class Rules {
      * @return
      */
     public static boolean checkValidAction(GameS22 game, int rowPiece, int colPiece, int rowPlayer, int colPlayer, char action) {
-        boolean checkBounds, checkEmpty, checkMovePath, checkAttackPath, checkRecruitPath, checkSpawnPath, checkLava;
+        if (game.getGameBoard().getSquares()[rowPiece][colPiece].isEmpty()) {
+            return false;
+        }
+        boolean checkBounds, checkEmpty, checkMovePath, checkAttackPath, checkRecruitPath, checkSpawnPath, checkLava, checkVaporizePath;
         String checkFrom, checkTo, currentTeam, oppTeam;
         currentTeam = game.getCurrentTeam().getTeamColor();
         oppTeam = game.getOpponentTeam().getTeamColor();
@@ -34,36 +37,42 @@ public class Rules {
         checkLava = game.getGameBoard().getSquares()[rowPlayer][colPlayer].isLava();
         checkMovePath = game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece().validMovePath(rowPiece, colPiece, rowPlayer, colPlayer);
         checkSpawnPath = game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece().validSpawnPath(rowPiece, colPiece, rowPlayer, colPlayer);
-
-        if (action == 'M') {
-            if (checkBounds == true && checkFrom == currentTeam) {
-                if (checkEmpty == true && checkMovePath == true) {
+        if (action == 'M' || action == 'm') {
+            if (checkBounds && checkFrom.equals(currentTeam)) {
+                if (checkEmpty && checkMovePath) {
                     return true;
                 }
             }
-        } else if (action == 'S') {
-            if (checkFromPiece instanceof PieceBuzz == false) {
-                return checkBounds == true && (checkFrom == currentTeam) && checkEmpty == true && checkSpawnPath == true;
+        } else if (action == 'S' || action == 's') {
+            if (!(checkFromPiece instanceof PieceBuzz)) {
+                return checkBounds && (checkFrom.equals(currentTeam)) && checkEmpty && checkSpawnPath;
             }
-        } else if (action == 'R') {
+        } else if (action == 'R' || action == 'r') {
             checkRecruitPath = ((Recruiter) game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece()).validRecruitPath(rowPiece, colPiece, rowPlayer, colPlayer);
-            if (checkFromPiece instanceof PieceBuzz == false && checkEmpty == false && checkLava == false) {
+            if (!(checkFromPiece instanceof PieceBuzz) && !checkEmpty && !checkLava) {
                 checkTo = game.getGameBoard().getSquares()[rowPlayer][colPlayer].getPiece().getTeamColor();
-                return checkBounds == true && checkFrom == currentTeam && checkTo == oppTeam && checkRecruitPath == true;
+                return checkBounds && checkFrom.equals(currentTeam) && checkTo.equals(oppTeam) && checkRecruitPath;
             }
-        } else if (action == 'A') {
+        } else if (action == 'A' || action == 'a') {
             checkAttackPath = ((Attacker) game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece()).validAttackPath(rowPiece, colPiece, rowPlayer, colPlayer);
-            if (checkBounds == true && checkFrom == currentTeam && checkEmpty == false && checkLava == false) {
+            if (checkBounds && checkFrom.equals(currentTeam) && !checkEmpty && !checkLava) {
                 checkTo = game.getGameBoard().getSquares()[rowPlayer][colPlayer].getPiece().getTeamColor();
-                if (checkFromPiece instanceof PieceBuzz && checkTo == oppTeam) {
+                if (checkFromPiece instanceof PieceBuzz && checkTo.equals(oppTeam)) {
                     return ((PieceBuzz) checkFromPiece).canAttack() && checkAttackPath;
-                } else if (checkFromPiece instanceof PieceBlueHen && checkTo == oppTeam) {
+                } else if (checkFromPiece instanceof PieceBlueHen && checkTo.equals(oppTeam)) {
                     return checkAttackPath;
                 } else if (checkFromPiece instanceof PieceEvilMinion) {
-                    if (((PieceEvilMinion) checkFromPiece).canAttack() && checkAttackPath == true) {
-                        return checkTo == oppTeam || checkToPiece instanceof PieceMinion;
+                    if (((PieceEvilMinion) checkFromPiece).canAttack() && checkAttackPath) {
+                        return checkTo.equals(oppTeam) || checkToPiece instanceof PieceMinion;
                     }
+                } else if (checkFromPiece instanceof PieceRoboMonkey && checkTo.equals(oppTeam)) {
+                    return checkAttackPath;
                 }
+            }
+        } else if (action == 'V' || action == 'v') {
+            checkVaporizePath = ((PieceRoboMonkey) game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece()).validVaporizePath(rowPiece, colPiece, rowPlayer, colPlayer);
+            if (checkBounds && checkFrom.equals(currentTeam) && !checkEmpty && !checkLava) {
+                return checkVaporizePath;
             }
         }
         return false;

@@ -29,12 +29,13 @@ public class TextView {
     }
 
     public static char getUsersNextActionType(Scanner scan) {
-        System.out.println("Enter one of these characters or a word beginning with them: A, M, R, S");
+        System.out.println("Enter one of these characters or a word beginning with them: A, M, R, S, V");
         char answer;
         String word;
         word = scan.nextLine();
         while (word.toUpperCase().charAt(0) != 'A' && word.toUpperCase().charAt(0) != 'M' &&
-                word.toUpperCase().charAt(0) != 'R' && word.toUpperCase().charAt(0) != 'S') {
+                word.toUpperCase().charAt(0) != 'R' && word.toUpperCase().charAt(0) != 'S' &&
+                word.toUpperCase().charAt(0) != 'V') {
             System.out.println("Enter a correct character: ");
             word = scan.nextLine();
         }

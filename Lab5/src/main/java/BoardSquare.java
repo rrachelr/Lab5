@@ -50,6 +50,7 @@ public class BoardSquare {
         return this.emptySpace;
     }
 
+    //Board Square Modification : Lava
     public boolean isLava() {
         return this.lava;
     }
@@ -86,7 +87,7 @@ public class BoardSquare {
         A toString method for the BoardSquare class which overrides the objects toString method.
          */
         if (this.lava) {
-            return "--Lava-";
+            return "-Lava--";
         }
         else if (this.emptySpace) {
             return "-------";

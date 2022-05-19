@@ -76,6 +76,9 @@ public class Rules {
                 }
             }
         } else if (action == 'V' || action == 'v') {
+            if (!(checkFromPiece instanceof PieceRoboMonkey)) {
+                return false;
+            }
             checkVaporizePath = ((PieceRoboMonkey) game.getGameBoard().getSquares()[rowPiece][colPiece].getPiece()).validVaporizePath(rowPiece, colPiece, rowPlayer, colPlayer);
             if (checkBounds && checkFrom.equals(currentTeam) && !checkEmpty && !checkLava) {
                 return checkVaporizePath;
@@ -83,6 +86,5 @@ public class Rules {
         }
         return false;
     }
-
 }
 

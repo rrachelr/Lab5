@@ -1,33 +1,35 @@
+Attacker.java
+ Attacker
+Team.java
+ Team
+PieceBuzz.java
+ PieceBuzz
+PieceBlueHen.java
+ PieceBlueHen
+Recruiter.java
+ Recruiter
+PieceEvilMinion.java
+ PieceEvilMinion
+Piece.java
+ Piece
+PieceMinion.java
+ PieceMinion
 Rules.java
  Rules
 Action.java
  Action
 GameBoard.java
  GameBoard
-PieceBlueHen.java
- PieceBlueHen
 BoardSquare.java
  BoardSquare
-PieceEvilMinion.java
- PieceEvilMinion
 ActionRecruit.java
  ActionRecruit
-PieceMinion.java
- PieceMinion
 ActionVaporize.java
  ActionVaporize
 ActionAttack.java
  ActionAttack
-Recruiter.java
- Recruiter
 ActionMove.java
  ActionMove
-Team.java
- Team
-PieceBuzz.java
- PieceBuzz
-Piece.java
- Piece
 TextView.java
  TextView
 PieceRoboMonkey.java
@@ -40,5 +42,3 @@ ActionSpawn.java
  ActionSpawn
 Controller.java
  Controller
-Attacker.java
- Attacker

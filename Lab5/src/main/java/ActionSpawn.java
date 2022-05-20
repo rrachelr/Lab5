@@ -22,7 +22,9 @@ public class ActionSpawn extends Action{
     public void performAction() {
         BoardSquare fromSquare = game.getGameBoard().getSquares()[rowFrom][colFrom];
         fromSquare.getPiece().speak();
-        ((PieceMinion) fromSquare.getPiece()).setNumTimesSpawned(((PieceMinion) fromSquare.getPiece()).getNumTimesSpawned() + 1);
+        if ((fromSquare.getPiece() instanceof PieceMinion)) {
+            ((PieceMinion) fromSquare.getPiece()).setNumTimesSpawned(((PieceMinion) fromSquare.getPiece()).getNumTimesSpawned() + 1);
+        }
         Piece spawn = fromSquare.getPiece().spawn();
         game.getCurrentTeam().addPieceToTeam(spawn);
         game.getGameBoard().getSquares()[rowTo][colTo].setPiece(spawn);

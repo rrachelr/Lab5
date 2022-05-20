@@ -1,5 +1,11 @@
-//New Piece Modification : Robo Monkey
-//This new class creates Robo Monkey pieces for our game.that can attack, recruit, spawn, and move.
+/**
+ * New Piece Modification : Robo Monkey
+ * We created a new class called PieceRoboMonkey
+ * that extends Piece. This class contains constructors,
+ * getters, setters, valid path methods, and a
+ * speak and spawn method. We also added a
+ * Robo Monkey piece to each team in the controller class.
+ */
 
 public class PieceRoboMonkey extends Piece implements Attacker, Recruiter{
     private int numAttacks;

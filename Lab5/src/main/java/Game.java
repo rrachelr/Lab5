@@ -10,6 +10,26 @@
  * @since 2022-04-10
  * @version 1
  */
+
+/**
+ * New Rule Modification : Extra Turn
+ * When a team is the first to bring their opponent
+ * down to 2 pieces, they receive an extra turn.
+ * We modified changeTurn in Game to check if
+ * a team is down to two pieces each turn, and
+ * if it is true, the extra turn is activated for the team.
+ */
+
+/**
+ * New Objective Modification : Turn Limit
+ * After 5 turns, the team with the most remaining pieces wins.
+ * If both teams have the same number of pieces, the game ends
+ * in a draw. A team can win before turn 5 by eliminating all opponent pieces.
+ * We modified changeTurn in Game by adding a boolean modifier
+ * called totalTurnCount that goes down every second time changeTurn
+ * is called so that each team has a chance to perform an action each turn.
+ */
+
 import java.util.Collections;
 
 public abstract class Game {

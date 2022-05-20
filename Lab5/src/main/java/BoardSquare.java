@@ -9,6 +9,16 @@ import java.util.Random;
  * @since 2022-04-06
  * @version 1
  */
+
+/**
+ * Board Square Modification : Lava Square
+ * Lava squares can’t be landed on by any piece.
+ * We modified the BoardSquare class adding a boolean modifier called lava and an
+ * if statement to the constructor that makes random BoardSquares have the lava modifier.
+ * In the Rules class, we check the toSquare for each action, and if it is a lava
+ * square the action is invalid.
+ */
+
 public class BoardSquare {
 
     /*
